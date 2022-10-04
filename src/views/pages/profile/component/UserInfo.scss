@@ -1,0 +1,48 @@
+.input-error-validation {
+    color: #e24747;
+    margin-top: .3rem;
+    margin-left: .3rem;
+    font-size: 1.3rem !important;
+    font-style: italic;
+}
+
+.user-info__wrapper {
+    h1 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+        margin-bottom: 1.6rem;
+    }
+
+    .form-info {
+        .info-item {
+            margin-bottom: 1.2rem;
+
+            label {
+                margin-bottom: .4rem;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                color: #000000;
+            }
+        }
+
+        .save-reset-password__btn-group {
+            display: flex;
+            justify-content: start;
+            margin-top: 3rem;
+            button {
+                padding: 1rem 2rem;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                color: #FFFFFF;
+            }
+            .btn-save{
+                margin-right: 2rem;
+                background-color: #B80000;
+            }
+        }
+    }
+}

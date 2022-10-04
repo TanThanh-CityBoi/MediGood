@@ -1,0 +1,66 @@
+.contact-form-wrapper {
+    padding: 5rem 0rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+
+    .hr-div {
+        border-top: 1.5px solid #000000;
+        max-width: 100rem;
+        min-width: 30rem;
+        margin-bottom: 3.6rem;
+    }
+
+    h1 {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 44px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 3.3rem;
+    }
+
+    .contact-form {
+        background-color: #353535;
+        border-radius: 20px;
+        width: 74.6rem;
+        min-width: 60rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 4.5rem 6.5rem 3.7rem 6.5rem;
+
+
+        table {
+            height: 100%;
+            width: 100%;
+            color: #FFFFFF;
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            input {
+                margin-bottom: 2.4rem;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            button {
+                border: 1px solid #FFFFFF;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                background: #353535;
+                padding: 1rem 3rem;
+                margin-top: 2.7rem;
+            }
+            button:hover{
+                filter: none;
+            }
+        }
+    }
+}

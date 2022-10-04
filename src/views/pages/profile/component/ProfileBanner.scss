@@ -1,0 +1,126 @@
+.profile-banner {
+    padding: 2rem;
+    margin-bottom: 7rem;
+    min-width: 60rem;
+
+    .profile-banner__row {
+        box-shadow: 2px 2px 5px 5px #dad8d8;
+        display: flex;
+
+        .banner-col_left {
+            position: relative;
+            width: 30rem;
+            min-width: 27rem;
+            height: 17rem;
+
+            .avatar-group {
+                display: flex;
+                justify-content: left;
+                position: absolute;
+                padding: .5rem;
+                top: 1rem;
+                left: 3rem;
+                border-radius: 50%;
+                border: solid .5rem #dad8d8;
+                background-color: #FFFFFF;
+
+                .btn-changeAvt {
+                    background-color: #0000002d;
+                    color: #0000003d;
+                    position: absolute;
+                    width: 20rem;
+                    height: 20rem;
+                    border-radius: 50%;
+                    opacity: 0;
+
+                    svg {
+                        height: 50%;
+                        width: 50%;
+                    }
+                }
+
+                .btn-changeAvt:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .banner-col_right {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            min-width: 30rem;
+            margin: 0rem 2rem;
+
+            .name-group {
+                display: flex;
+                align-items: flex-end;
+                padding: 2rem 0rem;
+
+                div {
+                    h1 {
+                        font-size: 2.5rem;
+                        font-weight: 600;
+                        line-height: 2rem;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    h2 {
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        line-height: 1.8rem;
+                    }
+                }
+            }
+
+            .btn-group {
+                display: flex;
+                align-items: flex-end;
+                padding: 2rem 0rem;
+
+                div {
+                    button {
+                        background-color: #E4E6EB;
+                        color: #050505;
+                        padding: 1rem;
+                        width: 100%;
+                        min-width: 20rem;
+                        text-align: center;
+                        font-size: 1.5rem;
+                        border-radius: .5rem;
+                    }
+
+                    .btn-user__cart {
+                        margin-bottom: 1rem;
+                        position: relative;
+
+                        svg {
+                            margin-right: 1rem;
+                            height: 2rem;
+                            width: 2rem;
+                            position: absolute;
+                            top: 25%;
+                            left: 1rem;
+                        }
+                    }
+
+                    .btn-edit__profile {
+                        position: relative;
+
+                        svg {
+                            margin-right: 1rem;
+                            height: 2rem;
+                            width: 2rem;
+                            position: absolute;
+                            top: 25%;
+                            left: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}

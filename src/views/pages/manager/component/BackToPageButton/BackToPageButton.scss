@@ -1,0 +1,25 @@
+.back-icon-button {
+  padding: 4px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+
+  &:hover {
+    background-color: var(--hover-background-color);
+    cursor: pointer;
+  }
+
+  svg {
+    font-size: 2.4rem;
+    color: var(--fade-text-color);
+  }
+
+  .content {
+    margin-left: 8px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--fade-text-color);
+  }
+}

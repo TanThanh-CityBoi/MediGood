@@ -1,0 +1,115 @@
+.shipment-detail-wrapper {
+    margin-bottom: 3rem;
+
+    .input-error-validation {
+        color: #e24747;
+        margin-top: .3rem;
+        margin-left: .3rem;
+        font-size: 1.3rem !important;
+        font-style: italic;
+    }
+    .shipment-detail {
+        padding: 0rem 2rem;
+
+        h1 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 22px;
+            color: #000000;
+            margin-bottom: 2rem;
+        }
+
+        .shipment-detail-form {
+
+            .form-item {
+                margin-bottom: .6rem;
+
+                input {
+                    width: 100%;
+                    max-width: 80rem;
+                }
+
+                label {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #5F5D5D;
+                    margin-bottom: .6rem;
+                }
+
+                textarea {
+                    width: 100%;
+                    max-width: 80rem;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+            }
+
+            .address-group {
+                width: 100%;
+                max-width: 80rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                margin-top: 1rem;
+
+                .input-field {
+                    width: 21rem;
+                    margin-bottom: .6rem;
+                }
+
+                label {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #5F5D5D;
+                    margin-bottom: .6rem;
+                }
+            }
+        }
+    }
+
+    .payment-method-wrapper {
+        padding: 0rem 2rem;
+        margin-top: 6.8rem;
+
+        .payment-method {
+            border: 1px solid #B9B9B9;
+
+            .payment-method-item {
+                border-bottom: 1px solid #B9B9B9;
+                padding: 2rem;
+                display: flex;
+                align-items: center;
+
+                label {
+                    margin-bottom: 0;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 2rem;
+                    color: #454545;
+                }
+
+                input {
+                    height: 2rem;
+                    width: 2rem;
+                    accent-color: #4a4444;
+                }
+
+            }
+
+            .transfer-info {
+                padding: 2.3rem;
+
+                p {
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,216 @@
+.header-visible {
+  visibility: visible;
+  transition: all 0.4s;
+}
+
+.header-hidden {
+   visibility: hidden;
+   transition: all 0.4s;
+   transform: translateY(-100%);
+}
+
+.header-wrapper {
+    background-color: #FFFFFF;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    box-shadow: 2px 2px 5px #7F7F7F;
+    z-index: 110;
+
+    .header {
+        width: 100%;
+        max-width: var(--max-width);
+        background-color: #FFFFFF;
+
+        .nav-1 {
+            padding: 0rem 1.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            min-height: 3rem;
+
+            .nav-1a {
+                display: flex;
+                align-items: center;
+                color: #000000;
+                min-height: 3rem;
+
+                p {
+                    margin: 0rem;
+                    font-weight: 700;
+                    font-size: 1.4rem;
+                    line-height: 1.6rem;
+
+                    svg {
+                        height: 1.7rem;
+                        width: 1.7rem;
+                    }
+
+                }
+            }
+
+            .nav-1b {
+                min-width: 3rem;
+                margin-right: -3rem;
+
+                .nav-item {
+                    display: flex;
+                    align-items: center;
+                    min-height: 30px;
+                    margin-right: 3.2rem;
+
+                    .active {
+                        font-weight: 500;
+                        color: #000000;
+                    }
+
+                    .active>svg:first-child {
+                        color: #000000;
+                    }
+
+                    a {
+                        svg {
+                            margin-right: 0.7rem;
+                            color: #7F7F7F;
+                            height: 1.7rem;
+                            width: 1.7rem;
+                        }
+
+                        display: flex;
+                        align-items: center;
+
+                        padding: 0rem;
+                        color: #252A2B;
+                        text-decoration: none;
+                        font-weight: 400;
+                        font-size: 1.4rem;
+                        line-height: 1.6rem;
+                    }
+                }
+
+                .nav-item {
+                    &:hover {
+
+                        a:first-child {
+                            font-weight: 500;
+                            color: #000000;
+                        }
+
+                        svg:first-child {
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .nav-2 {
+            .nav-2-navigate-group {
+                display: flex;
+                align-items: center;
+                padding: 0rem;
+
+                .nav-2-navbar-brand {
+                    padding: 0rem 1.7rem;
+                    min-width: 31rem;
+
+                    h1 {
+                        font-weight: 700;
+                        font-size: 48px;
+                        line-height: 65px;
+                        max-height: 6.5rem;
+                    }
+                }
+
+                .nav-2-navbar-expand {
+                    width: 100%;
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 18px;
+
+                    #navbarScroll {
+                        margin-left: 5rem;
+
+                        .navbar-nav-scroll {
+                            max-height: none !important;
+                        }
+                    }
+
+                    .nav-link {
+                        min-width: 10rem;
+                        max-height: 3.4rem;
+                        color: #000000;
+                        padding: 8px 11px;
+                        text-align: center;
+
+                        &:hover {
+                            color: #6c6c6c;
+                        }
+                    }
+
+                    .active {
+                        color: #6c6c6c;
+                    }
+
+                    .form-wrapper {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .form-search {
+                            display: flex;
+                            align-items: center;
+                            min-width: 30rem;
+                            max-width: 40rem;
+                            height: 3.8rem;
+
+                            input {
+                                border: none;
+                                font-weight: 400;
+                                font-size: 13px;
+                                line-height: 16px;
+                                color: #252A2B;
+                                background-color: transparent;
+                            }
+
+                            .form-control:focus {
+                                border: none;
+                                box-shadow: none;
+                            }
+
+                            .btn-search {
+                                background-color: transparent;
+                                color: #252A2B;
+                                border: none;
+                                padding: 1rem;
+
+                                svg {
+                                    height: 1.7rem;
+                                    width: 1.7rem;
+                                }
+                            }
+
+                            .btn-search:focus {
+                                box-shadow: none !important;
+                            }
+
+                            border: 1px solid #000000;
+                            border-radius: 25px;
+                        }
+
+                        .form-search:focus-within {
+                            box-shadow: 0 0 0 0.15rem rgba(44, 44, 44, 0.25);
+                        }
+                    }
+
+                }
+
+
+
+            }
+        }
+    }
+}

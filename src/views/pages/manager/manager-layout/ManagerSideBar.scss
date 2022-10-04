@@ -1,0 +1,57 @@
+.manager-side-bar-wrapper {
+  position: relative;
+  min-height: 100vh;
+  z-index: 100;
+  background-color: var(--primary-color);
+  .mystery-box {
+    width: 256px;
+  }
+  .fixed-position-content{
+    position: sticky;
+    width: 256px;
+    right: 0;
+    top: 0;
+  }
+
+
+  .branding-heading {
+    height: 66px;
+    background-color: #0f0f0f;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem !important;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  a {
+    display: block;
+  }
+  .manager-nav-item {
+    display: flex;
+
+    .manager-nav-leading {
+      font-size: 2.4rem;
+      color: white;
+    }
+
+    .manager-nav-content span {
+      font-size: 1.4rem;
+      color: white;
+      margin-left: -8px;
+      display: inline-block;
+      font-family: inherit;
+    }
+    .active {
+      :first-child {
+        background-color: #e6e6e6;
+      }
+    }
+  }
+}

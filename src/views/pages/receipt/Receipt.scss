@@ -1,0 +1,96 @@
+.receipt-detail-wrapper {
+    margin-top: 12rem;
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 2rem;
+
+    h1 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 14px;
+        margin-top: 18px;
+        line-height: 100%;
+    }
+
+    .infomation-wrapper {
+        margin-bottom: 18px;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 16px;
+        margin-right: 8px;
+        color: rgb(143, 0, 0);
+    }
+
+    .display-flex {
+        align-items: center;
+        margin-bottom: -4px;
+    }
+
+    .infomation-content {
+        margin-top: 4px;
+        font-size: 1.4rem;
+        line-height: 1.6;
+    }
+
+    .receipt-brief-wrapper {
+        .display-flex {
+            margin-top: 3px;
+            margin-bottom: 6px;
+
+            &:last-child {
+                border-top: 1px solid rgb(105, 105, 105);
+            }
+        }
+    }
+
+    .receipt-brief,
+    .money-formatter {
+        margin-top: 8px;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    .btn-cancel__receipt {
+        padding: 1rem 2rem;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+        background-color: #c00303;
+    }
+
+    .receipt_status_0{
+        color: #adb5bd;
+        margin-bottom: 0rem;
+        margin-left: 1rem;
+    }
+
+    .receipt_status_1{
+        color: #FFB246;
+        margin-bottom: 0rem;
+        margin-left: 1rem;
+    }
+
+    .receipt_status_2{
+        color: #03b181;
+        margin-bottom: 0rem;
+        margin-left: 1rem;
+    }
+    .receipt_status_3{
+        color: #618C46;
+        margin-bottom: 0rem;
+        margin-left: 1rem;
+    }
+    .receipt_status_4{
+        color: #0d6efd;
+        margin-bottom: 0rem;
+        margin-left: 1rem;
+    }
+    .receipt_status_5{
+        color: #ff0018;
+        margin-bottom: 0rem;
+        margin-left: 1rem;
+    }
+}

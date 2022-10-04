@@ -1,0 +1,186 @@
+@import "~bootstrap/scss/bootstrap";
+
+.product-card {
+  width: 23rem;
+  height: 44rem;
+  position: relative;
+  text-align: center;
+
+  :hover {
+    :last-child {
+      transition: 0.5s;
+      opacity: 1;
+    }
+  }
+
+  .card-img-top {
+    padding: 20px;
+    height: 20rem;
+    object-fit: contain;
+  }
+
+  .product-name {
+    font-family: Montserrat;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+    color: #000000;
+    text-decoration: none;
+    margin-bottom: 24px;
+
+    display: -webkit-box;
+    max-height: 3.6rem;
+    min-height: 3.6rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+  }
+
+  .desciption {
+    font-family: Montserrat;
+    font-weight: normal !important;
+    font-size: 12px !important;
+    line-height: 15px !important;
+    color: #6a6a6a;
+    margin-bottom: 24px;
+
+    display: -webkit-box;
+    height: 3rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+  }
+
+  .text-end {
+    padding: 0px 6px;
+
+    .old-price {
+      font-family: Montserrat;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-decoration-line: line-through;
+      color: #949494;
+    }
+  }
+
+  .text-start {
+    padding: 0px 6px;
+
+    .discount-percent {
+      font-family: Montserrat;
+      font-weight: 600;
+      font-size: 16.1161px;
+      line-height: 20px;
+      color: #de0000;
+    }
+  }
+
+  .new-price {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    color: #000000;
+    margin-bottom: 32px !important;
+  }
+
+  .hover-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    padding: 0px !important;
+    margin: 0px !important;
+
+    .col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 15px;
+        line-height: 16px;
+        border: none;
+        border-radius: 0%;
+
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+  }
+
+  .new-tag {
+    position: absolute;
+    transform: translate(170px, 150px);
+
+    .shape1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 30px;
+      width: 30px;
+      background: #cf365a;
+      transform: rotate(135deg);
+    }
+
+    .shape2 {
+      background: #cf365a;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      color: #ffffff;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .special-tag {
+    position: absolute;
+    height: 56px;
+    width: 46px;
+    transform: translateX(170px);
+    background-color: #cf365a;
+    font-size: 11px;
+
+    .rectangle {
+      height: 46px;
+      width: 100%;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 23px solid transparent;
+      border-right: 23px solid transparent;
+      border-bottom: 10px solid #ffffff;
+    }
+  }
+}
+
+.card {
+  margin: 0px !important;
+}

@@ -1,0 +1,118 @@
+.login-page-wrapper {
+  background-image: url("../../../../../assets/img/auth-background.jpg");
+  background-position: center;
+  background-size: cover;
+
+  button {
+    display: block;
+    width: 100%;
+    margin-top: 1.8rem;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  form {
+    margin: auto;
+    width: 80%;
+  }
+  a {
+    text-decoration: none !important;
+  }
+
+  .list-of-login-method-modal {
+    padding: 4rem;
+    width: 94%;
+    max-width: 700px;
+    position: relative;
+    .back-to-home {
+      position: absolute;
+      top: 5rem;
+      left: 5.5rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #000000;
+      text-decoration: none;
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    .css-51s1cf-MuiStack-root {
+      padding: 2rem;
+      div {
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        display: flex;
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+        p {
+          margin-left: 1rem;
+          font-size: 1.7rem;
+          font-weight: 600;
+          line-height: 2rem;
+        }
+      }
+      .email-login-btn {
+        background: #ffffff;
+        border: 1px solid #989898;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        color: #000;
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding: 1rem;
+        line-height: 2rem;
+      }
+    }
+    .google-facebook {
+      display: flex;
+      justify-content: space-between;
+      padding: 0rem !important;
+
+      .google-login {
+        border: solid 1px #989898;
+        color: #e24747;
+        width: 49%;
+        justify-content: center;
+      }
+
+      .facebook-login {
+        color: #566eef;
+        border: solid 1px #989898;
+        width: 49%;
+        justify-content: center;
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 0rem;
+    }
+
+    strong {
+      color: #000000;
+    }
+  }
+
+  .modal-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 36px;
+    margin-bottom: 31px;
+  }
+
+  .input-error-validation {
+    color: #e24747;
+    margin-top: 0.3rem;
+    margin-left: 0.3rem;
+    font-size: 1.3rem !important;
+    font-style: italic;
+  }
+}

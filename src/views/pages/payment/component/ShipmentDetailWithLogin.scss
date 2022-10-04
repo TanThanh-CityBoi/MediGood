@@ -1,0 +1,166 @@
+.shipment-detail-wrapper {
+    margin-bottom: 3rem;
+
+    .input-error-validation {
+        color: #e24747;
+        margin-top: .3rem;
+        margin-left: .3rem;
+        font-size: 1.3rem !important;
+        font-style: italic;
+    }
+
+    .shipment-detail {
+        padding: 0rem 2rem;
+
+        h1 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 22px;
+            color: #000000;
+            margin-bottom: 2rem;
+        }
+
+        .shipment-detail-with-login-form {
+            .address-group {
+                padding: 2.5rem 0rem;
+
+                .current-address__modal {
+                    display: flex;
+                    width: 100%;
+
+                    button {
+                        padding: 1rem;
+                        width: 100%;
+                        background-color: #dfdfdf;
+                        color: #454545;
+                        font-weight: 500;
+                        font-size: 16px;
+                        width: 15rem;
+                        margin-left: 1rem;
+                    }
+                }
+
+                .modify-address__modal {
+                    width: 100%;
+
+                    .address-item {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        margin-bottom: 2rem;
+                        input{
+                            height: 2rem;
+                            width: 2rem;
+                            margin-right: 2rem;
+                            accent-color: #4a4444;        
+                        }
+                    }
+
+                    .btn-group {
+                        display: flex;
+
+                        .btn-confirm-address {
+                            width: 50%;
+                            background-color: #FFFFFF;
+                            color: #454545;
+                            font-weight: 500;
+                            font-size: 16px;
+                            border: solid 1px #b8b5b5;
+                        }
+
+                        .btn-add-address {
+                            padding: 1rem;
+                            width: 50%;
+                            border: solid 1px #dfdfdf;
+
+                        }
+                    }
+                }
+            }
+
+            .none-address {
+                padding: 2.5rem 0rem;
+            }
+
+            .btn-add-address {
+                padding: 1.5rem;
+                width: 100%;
+                background-color: #dfdfdf;
+                color: #454545;
+                font-weight: 500;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    margin-right: 1rem;
+                }
+            }
+
+            .form-item {
+                margin-bottom: .6rem;
+
+                textarea {
+                    width: 100%;
+                    max-width: 80rem;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+
+                label {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #5F5D5D;
+                    margin-bottom: .6rem;
+                }
+            }
+        }
+    }
+
+    .payment-method-wrapper {
+        padding: 0rem 2rem;
+        margin-top: 6.8rem;
+
+        .payment-method {
+            border: 1px solid #B9B9B9;
+
+            .payment-method-item {
+                border-bottom: 1px solid #B9B9B9;
+                padding: 2rem;
+                display: flex;
+                align-items: center;
+
+                label {
+                    margin-bottom: 0;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 2rem;
+                    color: #454545;
+                }
+
+                input {
+                    height: 2rem;
+                    width: 2rem;
+                    accent-color: #4a4444;
+                }
+
+            }
+
+            .transfer-info {
+                padding: 2.3rem;
+
+                p {
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}
