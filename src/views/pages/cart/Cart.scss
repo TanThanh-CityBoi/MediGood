@@ -1,0 +1,110 @@
+.cart-wrapper {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-top: 11rem;
+    margin-bottom: 5rem;
+
+    .cart-header {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+        margin-bottom: 2rem;
+
+        h1 {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 4.4rem;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 2rem;
+            line-height: 4.4rem;
+            margin-bottom: 0;
+            margin-left: 1rem;
+        }
+    }
+
+    .cart-body {
+        width: 100%;
+        margin: 0rem 0rem 10rem 0rem;
+
+        .list-product {
+            padding: 0rem 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .receipt-briefing {
+
+            display: flex;
+            justify-content: center;
+            padding: 0rem 2rem;
+            margin-bottom: 4rem;
+
+            div {
+                width: 100%;
+                max-width: 40rem;
+            }
+
+            h1 {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                color: #000000;
+                margin-bottom: .7rem;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #000000;
+            }
+
+            .total-price {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                max-width: 40rem;
+                margin-top: 1.9rem;
+
+                P {
+                    font-weight: 700;
+                    margin-bottom: .3rem;
+                }
+            }
+
+            hr {
+                max-width: 40rem;
+            }
+
+            .button-group {
+                button {
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 22px;
+                    padding: .9rem 0rem;
+                    width: 100%;
+                    max-width: 40rem;
+                }
+
+                .btn-buy {
+                    color: #FFFFFF;
+                    background-color: #000000;
+                    border: 1px solid #000000;
+                    margin-bottom: 1.3rem;
+                }
+
+                .btn-to-store {
+                    color: #000000;
+                    background-color: #FFFFFF;
+                    border: 1px solid #000000;
+                }
+
+                button:hover {
+                    filter: none;
+                }
+            }
+        }
+    }
+}

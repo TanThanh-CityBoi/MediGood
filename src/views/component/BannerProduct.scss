@@ -1,0 +1,16 @@
+.product-banner {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: #E5E5E5;
+    width: 100%;
+
+    .banner-img {
+        width: 107rem;
+        height: 27rem;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

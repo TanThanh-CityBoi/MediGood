@@ -1,0 +1,28 @@
+.bread-crum-wrapper {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    padding: 2rem;
+    svg{
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1rem;
+    }
+
+    a {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #252A2B;
+        text-decoration: none;
+        margin-right: 2rem;
+        svg{
+            margin-right: 2rem;
+            height: 1.7rem;
+            width: 1.7rem;
+        }
+    }
+    a:hover{
+        color: #000000;
+    }
+}

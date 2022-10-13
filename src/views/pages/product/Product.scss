@@ -1,0 +1,45 @@
+.product-wrapper {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-top: 11rem;
+
+
+    .detail-banner {
+        background-color: #ECECF7;
+        height: 11rem;
+        padding: 3.3rem 0rem;
+
+        h1 {
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 44px;
+            letter-spacing: 0.27em;
+            text-align: center;
+            margin: 0rem;
+            color: #000000;
+        }
+    }
+
+    .accessory-detail {
+        padding: 2.4rem;
+        margin-bottom: 4rem;
+        h5 {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+            margin: 0;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            margin: 0;
+        }
+    }
+
+    .suggest-product {
+        margin-bottom: 5rem;
+    }
+}

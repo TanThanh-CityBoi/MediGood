@@ -1,0 +1,178 @@
+.product-briefing-wrapper {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 3rem 0rem 7rem 0rem;
+
+    .product-img-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+
+        .img-list {
+            width: 7.5rem;
+            min-width: 7.5rem;
+            margin: 0rem 2rem;
+            overflow-y: auto;
+            height: 50rem;
+
+            img {
+                height: 7rem;
+                width: 7rem;
+                padding: 0.5rem;
+                border: solid 1px #BFBFBF;
+                margin-bottom: 1rem;
+            }
+
+            .img-active {
+                border: solid 1px #000000;
+            }
+
+
+        }
+
+        .img-list::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        /* Track */
+        .img-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        .img-list::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        .current-img {
+            height: 50rem;
+            width: 50rem;
+            min-width: 30rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 100%;
+                width: 100%;
+                max-width: 50rem;
+                max-height: 50rem;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .product-briefing {
+        .product-code {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            color: #000000;
+        }
+
+        .product-name {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 44px;
+            color: #000000;
+            margin-bottom: 6rem;
+        }
+
+        .product-discount {
+            display: flex;
+            align-items: flex-end;
+
+            p {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 29px;
+                text-decoration-line: line-through;
+                color: #888585;
+                margin-bottom: 0rem;
+            }
+
+            span {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                color: #C00303;
+                margin-left: 1.5rem;
+            }
+        }
+
+        .sell-price {
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 44px;
+            color: #000000;
+        }
+
+        .product-count {
+            h3 {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                color: #000000;
+                margin-bottom: 1.6rem;
+            }
+
+            div{
+                display: flex;
+                margin-bottom: 3.3rem;
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+                input {
+                    height: 4rem;
+                    width: 7rem;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: #000000;
+                    border-top: 1px solid #C0C0C0;
+                    border-bottom: 1px solid #C0C0C0;
+                    text-align: center;
+                }
+                button{
+                    background-color: #FFFFFF;
+                    border: 1px solid #C0C0C0;
+                    color: #000000;
+                    font-size: 2rem;
+                    height: 4rem;
+                    width: 4rem;
+                    padding: 0rem;
+                }
+                button:hover{
+                    filter: none;
+                }
+            }
+        }
+
+        .buy-btn-group {
+            .btn-add-to-cast {
+                width: 250px;
+                height: 40px;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                color: #FFFFFF;
+                background-color: #353535;
+                border: none;
+                margin-bottom: 1.2rem;
+            }
+
+            .btn-buy {
+                width: 250px;
+                height: 40px;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                color: #FFFFFF;
+                border: none;
+                background-color: #FF0000;
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.css-xko8m9-MuiDataGrid-root {
+    border-radius: 0px;
+  }
+  
+  .css-xko8m9-MuiDataGrid-root .MuiDataGrid-main {
+    border-radius: 0px;
+  }
+  .datagrid-container-wrapper {
+    margin-top: 12px;
+    position: relative;
+  
+    .selected-rows-count {
+      z-index: 100;
+      font-size: 1.4rem;
+      font-weight: 500;
+      text-align: left;
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 24px;
+      position: absolute;
+      bottom: 0;
+      left: 14px;
+  
+      strong {
+        color: var(--primary-color);
+  
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  
+    .MuiDataGrid-columnHeaderTitle {
+      font-weight: 600;
+      font-family: "Montserrat";
+      font-size: 1.3rem;
+    }
+  
+    .MuiDataGrid-columnHeaders {
+      padding: 12px;
+    }
+    .MuiTablePagination-selectLabel {
+      font-size: 1.4rem;
+      font-family: "Montserrat";
+      font-weight: 500;
+    }
+    .MuiTablePagination-select {
+      margin-top: 3px;
+      font-family: "Montserrat";
+    }
+    .MuiTablePagination-menuItem {
+      font-weight: 500;
+      font-size: 14px;
+      font-family: "Montserrat";
+    }
+    .MuiTablePagination-displayedRows {
+      font-weight: 500;
+      font-size: 14px;
+      font-family: "Montserrat";
+    }
+    .MuiDataGrid-selectedRowCount {
+      font-weight: 500;
+      font-size: 14px;
+      font-family: "Montserrat";
+    }
+    .MuiSvgIcon-root {
+      width: 24px;
+      height: 24px;
+      // margin-left: -16px;
+    }
+    .MuiDataGrid-cellContent {
+      font-weight: 500;
+      font-size: 1.2rem;
+      font-family: "Montserrat";
+    }
+    .MuiDataGrid-virtualScroller {
+      overflow-y: auto;
+    }
+    .MuiMenuItem-gutters {
+      font-weight: 500;
+      font-size: 14px;
+      font-family: "Montserrat";
+    }
+  
+    .MuiDataGrid-filterFormColumnInput {
+      font-weight: 500;
+      font-size: 14px;
+      font-family: "Montserrat";
+    }
+  
+    .MuiInputLabel-formControl {
+      font-weight: 500;
+      font-size: 18px;
+      font-family: "Montserrat";
+    }
+  
+    .MuiNativeSelect-select {
+      font-weight: 500;
+      font-size: 14px;
+      font-family: "Montserrat";
+    }
+  
+    .MuiInputBase-input {
+      font-weight: 500;
+      font-size: 14px;
+      font-family: "Montserrat";
+    }
+  
+    .MuiDataGrid-row {
+      padding-left: 12px;
+      cursor: pointer;
+    }
+
+    .product-info-cell{
+        img{
+            height: 6rem;
+            width: 6rem;
+            object-fit: contain;
+        }
+    }
+  }
+  

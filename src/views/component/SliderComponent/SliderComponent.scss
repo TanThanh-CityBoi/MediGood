@@ -1,0 +1,83 @@
+.slider {
+  .carousel {
+    height: 36rem;
+    width: 100%;
+
+    img {
+      height: 100%;
+      filter: brightness(0.4);
+    }
+    .light-img {
+      filter: brightness(1);
+    }
+
+    .carousel-caption {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      height: 100%;
+      text-align: left;
+
+      h1 {
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 88px;
+        color: #ffffff;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 40px;
+        color: #ffffff;
+      }
+
+      button {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        height: 50px;
+        width: 200px;
+        border-radius: 0%;
+      }
+    }
+  }
+}
+
+.slogan {
+  text-align: center;
+  padding: 5rem;
+
+  h3 {
+    font-family: "Modern Antiqua";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 4.7rem;
+    line-height: 5.6rem;
+    margin: 0rem;
+  }
+
+  .para-1 {
+    padding: 0px 12%;
+    margin: 22px 0px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 37px;
+
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .para-2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 27px;
+    line-height: 37px;
+  }
+}

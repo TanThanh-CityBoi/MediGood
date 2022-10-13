@@ -1,0 +1,98 @@
+.css-79ws1d-MuiModal-root {
+    .box-modal {
+        .input-error-validation {
+            color: #e24747;
+            margin-top: .3rem;
+            margin-left: .3rem;
+            font-size: 1.3rem !important;
+            font-style: italic;
+        }
+
+        .addAddress-form-group {
+            position: relative;
+            padding: 4rem 5rem;
+            background-color: #FFFFFF;
+            min-height: 40rem;
+
+            .exit-btn {
+                position: absolute;
+                top: 0rem;
+                right: 0rem;
+
+                button {
+                    padding: 1rem;
+                    margin: 0.5rem;
+                    background-color: #FFFFFF;
+
+                    svg {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                    }
+                }
+            }
+
+
+            .form-item {
+                margin-bottom: .6rem;
+
+                input {
+                    width: 100%;
+                    max-width: 80rem;
+                }
+
+                label {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #5F5D5D;
+                    margin-bottom: .6rem;
+                }
+
+                textarea {
+                    width: 100%;
+                    max-width: 80rem;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+            }
+
+            .address-group {
+                width: 100%;
+                max-width: 80rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                margin-top: 1rem;
+
+                .input-field {
+                    width: 16rem;
+                    margin-bottom: .6rem;
+                }
+
+                label {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #5F5D5D;
+                    margin-bottom: .6rem;
+                }
+            }
+
+            .btn-submit {
+                margin-top: 3rem;
+                display: flex;
+                justify-content: center;
+
+                button {
+                    min-width: 33rem;
+                    width: 100%;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 22px;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}

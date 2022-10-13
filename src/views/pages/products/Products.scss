@@ -1,0 +1,26 @@
+.products-wrapper {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-top: 11rem;
+
+    .product-list-group {
+        min-height: 80rem;
+        min-width: 104rem;
+        width: 100% !important;
+        padding: 4rem 0rem;
+
+        .product-list-group_row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+
+            .product__list-group {
+                padding: 0rem;
+            }
+        }
+    }
+
+    .suggest-product {
+        margin-bottom: 5rem;
+    }
+}

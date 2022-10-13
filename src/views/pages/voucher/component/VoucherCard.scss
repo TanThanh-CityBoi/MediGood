@@ -1,0 +1,74 @@
+.voucher-card {
+    display: flex;
+    height: 26rem;
+    width: 60rem;
+
+    .voucher-avatar {
+        max-width: 40rem;
+        max-height: 40rem;
+
+        width: 50%;
+        height: 100%;
+
+        img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .voucher-content {
+        width: 50%;
+        padding: 1.5rem;
+
+        .voucher-code {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+
+            b {
+                text-transform: uppercase;
+                color: #ff5e00;
+            }
+        }
+
+        .discount-amount {
+            font-weight: 700;
+            font-size: 35px;
+            line-height: 43px;
+            color: #940125;
+        }
+
+        .voucher-limit {
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            color: #000000;
+        }
+
+        .voucher-description {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+
+            height: 10rem;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            -webkit-line-clamp: 4;
+        }
+
+        .btn-buy-now {
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 17px;
+            color: #FFFFFF;
+            width: 100%;
+        }
+    }
+}

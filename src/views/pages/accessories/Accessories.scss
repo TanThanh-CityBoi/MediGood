@@ -1,0 +1,20 @@
+.products-wrapper {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-top: 11rem;
+
+    .special-product-head {
+        padding: 4.3rem;
+
+        h1 {
+            text-align: center;
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
+
+    .suggest-product{
+        margin-bottom: 5rem;
+    }
+}

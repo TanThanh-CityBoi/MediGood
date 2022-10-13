@@ -1,0 +1,88 @@
+.receipt-brefing {
+    margin-bottom: 7rem;
+    .list-product{
+        margin-bottom: 6rem;
+     //   padding: 0rem 2rem;
+    }
+    .receipt-description-wrapper {
+        display: flex;
+        justify-content: center;
+
+        .receipt-description {
+            min-width: 50rem;
+            max-width: 70rem;
+
+            .receipt-title {
+                font-weight: 600;
+                font-size: 19px;
+                line-height: 22px;
+                text-align: center;
+                color: #000000;
+                margin-bottom: 4.3rem;
+            }
+
+            .price-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 1.5rem;
+
+                h5 {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 17px;
+                    color: #5C5C5C;
+                    margin: 0;
+                }
+
+                p {
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 17px;
+                    color: #000000;
+                    margin: 0;
+                }
+
+                h4 {
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: #000000;
+                    margin: 0;
+                }
+            }
+
+            .receipt-note {
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 16px;
+                color: #6F0000;
+            }
+
+            .button-group {
+                .input-voucher {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 1.5rem;
+                    input{
+                        max-width: 54rem;
+                    }
+                    button{
+                        width: 15rem;
+                    }
+                }
+
+                button {
+                    font-weight: 600;
+                    font-size: 17px;
+                    line-height: 22px;
+                    color: #FFFFFF;
+                }
+                .order-btn{
+                    width: 100%;
+                    padding: 1rem;
+                }
+            }
+        }
+
+    }
+}
