@@ -1,22 +1,22 @@
+import './Product.scss'
 import { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
-import { productActions } from '../../../actions/product.actions'
+import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { ProductBrief } from './component/ProductBrief'
 import { Breadcrumb } from '../../component/Breadcrumb'
 import { SuggestProduct } from '../../component/SuggestProduct'
-import { ProductBrief } from './component/ProductBrief'
+import { productActions } from '../../../actions/product.actions'
 import { ProductDetailInfo } from './component/ProductDetailInfo'
-import './Product.scss'
-import { useParams } from 'react-router-dom'
 
 
 const dataBread = [
     {
-        name: 'Rượu',
+        name: 'Sản phẩm',
         link: '/san-pham'
     },
     {
-        name: 'Rượu vang pháp',
+        name: 'Thuốc cảm',
         link: '/chi-tiet-san-pham/:1'
     }]
 function Product() {
@@ -24,7 +24,6 @@ function Product() {
     const params = useParams();
     const productID = params.id;
     const product = useSelector(state => state.productReducer.product) || {}
-    console.log("product: ", product);
     const isLoading = useSelector(state => state.productReducer.isLoading)
 
     useEffect(() => {

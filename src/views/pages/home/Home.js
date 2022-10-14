@@ -1,53 +1,24 @@
+import "./Home.scss";
+import { IoStar } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userActions } from "../../../actions/user.actions";
-import { Carousel, Container, Button, Card, Row, Col } from "react-bootstrap";
-import { IoStar } from "react-icons/io5";
-import { ProductComponent } from "../../component/product-component/ProductComponent";
 import HorizontalScroll from "react-horizontal-scrolling";
-import { appActions } from "../../../actions";
-import "./Home.scss";
-import { useNavigate } from "react-router-dom";
+import { 
+  Carousel, 
+  Container, 
+  Button, 
+  Card, 
+  Row, 
+  Col 
+} from "react-bootstrap";
+import { ProductComponent } from "../../component/product-component/ProductComponent";
 import SliderComponent from "../../component/SliderComponent/SliderComponent";
 import { productServices } from "../../../services";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const product = {
-    _id: "6293b9ae984ace117e99b886",
-    name: "Wine Castellari Bergaglio, Salluvii Gavi, 2017",
-    sku: "HT3892",
-    aboutProduct: "Một đoạn ngắn mô tả thông tin sản phẩm",
-    avtURL:
-      "https://vinoteka.vn/assets/components/phpthumbof/cache/092121-1.f82e22adba27a7c64145c7a97710f316.jpg",
-    imgURLs: [
-      "https://res.cloudinary.com/tanthanh0805/image/upload/v1645587735/LuxyWine/Rectangle10_tmk53m.png",
-      "https://vinoteka.vn/assets/components/phpthumbof/cache/092121-1.f82e22adba27a7c64145c7a97710f316.jpg",
-      "https://vinoteka.vn/assets/components/phpthumbof/cache/071303-1.be16d2d411b9f5d48c089e890607cf09.jpg",
-      "https://vinoteka.vn/assets/components/phpthumbof/cache/092104-1.e0b0155f7422a686f522524c1b1fbd23.jpg",
-    ],
-
-    quantity: 100,
-    importPrice: 600000, // Giá nhập
-    originPrice: 750000, // Giá bán gốc
-    price: 700000, // Giá bán đã sale
-    temperature: { minimum: 10, maximun: 40 }, // Nhiệt độ sử dụng
-    color: ["Red", "Blue"],
-    food: ["Thịt cừu", "Thịt bò"],
-    origin: "Italy", // Xuất xứ
-    producer: "DOCG", //Nhà sản xuất
-    concentrationPercent: 40, //  nồng độ cồn ( tính theo %)
-    capacity: 750, // Dung tích (ml)
-    vintage: 2017, // Năm sản xuất
-    aboutProduct:
-      "The soil is calcareous-clayish and silt with south exposure. Yield per hectare: 9 tonnes. Manual harvest.Winemaking process:Fermented in stainless steel tanks, at a temperature of about 25-26'C, for 15 days in contact with the skins, it is drained to complete the primary fermentation without grape marc. After completing malolactic fermentation, it continues refinement in stainless steel tanks. ", // Một đoạn ngắn mô tả thông tin sản phẩm
-    sugar: 10, // Hàm lượng đường
-    experation: "Date", //Date
-    productType: "wine", // wine/combo/accessory
-    isSpecial: true,
-    isNew: true,
-    hasSold: 50, //số sp đã bán
-  };
+  const navigate = useNavigate();
 
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -55,7 +26,6 @@ const Home = () => {
       setProducts(data.data.sort((a, b) => a.price > b.price));
     });
   }, []);
-  const navigate = useNavigate();
   const banners = useSelector((state) => state.bannerReducer.banners) || [];
   return (
     <>
@@ -72,14 +42,6 @@ const Home = () => {
         <AboutUs />
         <CustomerReview />
         <Map />
-        {/* <button
-          onClick={() => {
-            console.log("Click", appActions);
-            dispatch(appActions.showSuccessToast("hehehehhe"));
-          }}
-        >
-          Click me
-        </button> */}
       </Container>
     </>
   );
@@ -96,8 +58,8 @@ const Home = () => {
             />
             <Carousel.Caption>
               <div className="carousel-content">
-                <h1>Luxy Wine</h1>
-                <p>Chuyên gia cung cấp sỉ và lẻ rượu nhập khẩu</p>
+                <h1>Medi-Good</h1>
+                <p>Chuyên gia cung cấp dược phẩm</p>
                 <Button variant="light">MUA NGAY</Button>
               </div>
             </Carousel.Caption>
@@ -141,9 +103,9 @@ const Home = () => {
   function Slogan() {
     return (
       <div className="slogan">
-        <h3>Wine</h3>
+        <h3>Medicine</h3>
         <p className="para-1">
-          “Wine is one of the most civilized things in the world and one of the
+          "Medicine is one of the most civilized things in the world and one of the
           most natural things of the world that has been brought to the greatest
           perfection, and it offers a greater range for enjoyment and
           appreciation than, possibly, any other purely sensory thing.”
@@ -156,7 +118,7 @@ const Home = () => {
   function Product() {
     return (
       <div className="product">
-        <h3 style={{ marginBottom: "32px" }}>Sản phẩm nổi bật của Luxy Wine</h3>
+        <h3 style={{ marginBottom: "32px" }}>Sản phẩm nổi bật</h3>
         <div className="px-5 py-3" id="container">
           <HorizontalScroll>
             {Array.from({ length: products.length }).map((_, idx) => (
@@ -174,7 +136,7 @@ const Home = () => {
     return (
       <div className="about-us">
         <div className="baner-img"></div>
-        <h3>Luxy Wine</h3>
+        <h3>Medi-Good</h3>
         <p className="para-1">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever

@@ -2,9 +2,6 @@ import React from "react";
 
 const Homepage = React.lazy(() => import("./views/pages/home/Home"));
 const Products = React.lazy(() => import("./views/pages/products/Products"));
-const SpecialProducts = React.lazy(() =>
-  import("./views/pages/special-products/SpecialProducts")
-);
 const Accessories = React.lazy(() =>
   import("./views/pages/accessories/Accessories")
 );
@@ -15,8 +12,6 @@ const Profile = React.lazy(() => import("./views/pages/profile/Profile"));
 const Receipt = React.lazy(() => import("./views/pages/receipt/Receipt"));
 const Blogs = React.lazy(() => import("./views/pages/blog/Blogs"));
 const Blog = React.lazy(() => import("./views/pages/blog/Blog"));
-
-const Voucher = React.lazy(() => import("./views/pages/voucher/Vouchers"));
 
 const Dashboard = React.lazy(() =>
   import("./views/pages/manager/page/dashboard/Dashboard")
@@ -98,21 +93,11 @@ const OrderLookup = React.lazy(() =>
   import("./views/pages/orderLookup/orderLookup")
 );
 
-const publicRoute = [
-  // {path: '/trang-chu', name: 'Trang chủ', element: <Homepage/>},
-  // {path: '/san-pham', name: 'Sản phẩm', element: <Products/>},
-  // {path: '/tai-khoan', protected: true, name: 'tài khoản', element: <h1>This is account page</h1>},
-  // {path: '/fake', protected: true, name: 'tài khoản'},
-];
+const publicRoute = [];
 
 const commonRoute = [
   { path: "/trang-chu", name: "Trang chủ", element: <Homepage /> },
   { path: "/san-pham", name: "Sản phẩm", element: <Products /> },
-  {
-    path: "/san-pham-dac-biet",
-    name: "Sản phẩm đặc biệt",
-    element: <SpecialProducts />,
-  },
   { path: "/phu-kien", name: "Phụ kiện", element: <Accessories /> },
   {
     path: "/chi-tiet-san-pham/:id",
@@ -125,7 +110,6 @@ const commonRoute = [
   { path: "/tra-cuu-don-hang", name: "Thanh toán", element: <OrderLookup /> },
   { path: "/tin-tuc", name: "Tin tức", element: <Blogs /> },
   { path: "/tin-tuc/:id", name: "Tin tức", element: <Blog /> },
-  { path: "/khuyen-mai", name: "Khuyến mãi", element: <Voucher /> },
 ];
 
 const protectedRoute = [
@@ -143,7 +127,7 @@ const protectedRoute = [
 
 const managerRoute = [
   { path: "/quan-ly/dashboard", name: "Dashboard", element: <Dashboard /> },
-
+    ///---------------------------
   { path: "/quan-ly/san-pham", name: "Dashboard", element: <ProductList /> },
   { path: "/quan-ly/san-pham/new", name: "Dashboard", element: <NewProduct /> },
   {
@@ -156,7 +140,7 @@ const managerRoute = [
     name: "Dashboard",
     element: <ProductDetail />,
   },
-
+    ///---------------------------
   { path: "/quan-ly/tin-tuc", name: "Dashboard", element: <NewsList /> },
   { path: "/quan-ly/tin-tuc/new", name: "Dashboard", element: <NewNews /> },
   {
@@ -165,7 +149,7 @@ const managerRoute = [
     element: <EditNews />,
   },
   { path: "/quan-ly/tin-tuc/:id", name: "Dashboard", element: <NewsDetail /> },
-
+  ///---------------------------
   { path: "/quan-ly/nguoi-dung", name: "Dashboard", element: <UserList /> },
   { path: "/quan-ly/nguoi-dung/new", name: "Dashboard", element: <NewUser /> },
   {
@@ -178,7 +162,7 @@ const managerRoute = [
     name: "Dashboard",
     element: <UserDetail />,
   },
-
+  ///---------------------------
   { path: "/quan-ly/khuyen-mai", name: "Dashboard", element: <VoucherList /> },
   {
     path: "/quan-ly/khuyen-mai/new",

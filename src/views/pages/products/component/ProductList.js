@@ -1,11 +1,11 @@
+import "./ProductList.scss";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { productActions } from "../../../../actions/product.actions";
-import { ProductComponent } from "../../../component/product-component/ProductComponent";
 import { PaginationCustom } from "../../../component/PaginationCustom";
-import "./ProductList.scss";
-import { useNavigate } from "react-router-dom";
+import { ProductComponent } from "../../../component/product-component/ProductComponent";
 
 function ProductList(props) {
   const navigate = useNavigate();

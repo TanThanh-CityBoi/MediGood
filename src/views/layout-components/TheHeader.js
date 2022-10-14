@@ -158,7 +158,7 @@ const TheHeader = () => {
           <Container className="nav-2-navigate-group">
             <Navbar bg="light" expand="xxl" className="nav-2-navbar-expand">
               <Navbar.Brand href="/" className="nav-2-navbar-brand mx-0">
-                <h1>Luxy Wine</h1>
+                <h1>Medi-Good</h1>
               </Navbar.Brand>
               <Navbar.Toggle
                 id="navbarScroll-control-btn"
@@ -176,23 +176,13 @@ const TheHeader = () => {
                     Trang chủ
                   </NavLink>
                   <NavLink to={`/san-pham`} role="button" className="nav-link">
-                    Rượu
-                  </NavLink>
-                  <NavLink
-                    to={`/san-pham-dac-biet`}
-                    role="button"
-                    className="nav-link"
-                  >
-                    Combo
-                  </NavLink>
-                  <NavLink to={`/phu-kien`} role="button" className="nav-link">
-                    Phụ kiện
-                  </NavLink>
-                  <NavLink to={`/khuyen-mai`} role="button" className="nav-link">
-                    Khuyến mãi
+                    Sản phẩm
                   </NavLink>
                   <NavLink to={`/tin-tuc`} role="button" className="nav-link">
                     Tin tức
+                  </NavLink>
+                  <NavLink to={`/tin-tuc`} role="button" className="nav-link">
+                    Liên hệ
                   </NavLink>
                 </Nav>
                 <div className="form-wrapper">

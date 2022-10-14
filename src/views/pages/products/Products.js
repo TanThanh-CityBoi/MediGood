@@ -1,13 +1,12 @@
+import "./Products.scss";
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { productActions } from "../../../actions/product.actions";
-import { Col, Container, Row } from "react-bootstrap";
+import { bannerActions } from "../../../actions";
 import { ProductList } from "./component/ProductList";
+import { Col, Container, Row } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { Banner } from "../../component/BannerProduct";
 import { FilterComponent } from "./component/FilterComponent";
 import { SuggestProduct } from "../../component/SuggestProduct";
-import { Banner } from "../../component/BannerProduct";
-import "./Products.scss";
-import { bannerActions } from "../../../actions";
 import SliderComponent from "../../component/SliderComponent/SliderComponent";
 
 const Products = () => {
@@ -16,8 +15,6 @@ const Products = () => {
   const banners = useSelector((state) => state.bannerReducer.banners);
   useEffect(() => {
     if (banners.length === 0) dispatch(bannerActions.getAll());
-    // const query = {}
-    // dispatch(productActions.getList(query));
   }, []);
 
   return (

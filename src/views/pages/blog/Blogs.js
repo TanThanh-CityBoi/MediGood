@@ -14,8 +14,6 @@ function Blogs() {
   const banners = useSelector((state) => state.bannerReducer.banners);
   useEffect(() => {
     if (banners.length === 0) dispatch(bannerActions.getAll());
-    // const query = {}
-    // dispatch(productActions.getList(query));
   }, []);
   return (
     <Container className="blogs-wrapper">

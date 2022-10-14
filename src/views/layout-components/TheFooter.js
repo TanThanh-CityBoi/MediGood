@@ -1,6 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { userActions } from "../../actions/user.actions";
 import {
   Container,
   Row,
@@ -18,7 +16,7 @@ const TheFooter = () => {
     <Container className="container-wrapper">
       <Row className="footer">
         <Col xs={12} sm={6} className="address">
-          <h1>Luxy Wine</h1>
+          <h1>Medi-Good</h1>
           <p
             style={{
               fontWeight: "700",
@@ -44,7 +42,7 @@ const TheFooter = () => {
             <p>Chính sách đổi trả</p>
           </Link>
           <Link to="/">
-            <p>Về Luxy Wine</p>
+            <p>Về Medi-Good</p>
           </Link>
         </Col>
         <Col xs={12} sm={3} className="contact">
@@ -57,8 +55,7 @@ const TheFooter = () => {
             </a>
           </p>
           <p>
-            Nhập email để đăng ký nhận những thông tin khuyến mãi đến từ Luxy
-            Wine
+            Nhập email để đăng ký nhận những thông tin khuyến mãi đến từ Medi-Good
           </p>
           <InputGroup className="my-4">
             <FormControl

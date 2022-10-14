@@ -5,12 +5,10 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
 import rootReducer from './reducers';
 import thunk from 'redux-thunk';
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from 'redux';
-
 
 import {createBrowserHistory} from 'history';
 const history = createBrowserHistory();
