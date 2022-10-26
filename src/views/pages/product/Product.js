@@ -31,24 +31,19 @@ function Product() {
     }, [productID])
 
     return (
-        isLoading ? <h1 style={{marginTop: "12rem"}}>Loading.......</h1>:
-        Object.keys(product).length === 0 ? <h1 style={{marginTop: "12rem"}}>Loading.......</h1>:
-        <Container className='product-wrapper'>
-            <Breadcrumb data={dataBread} />
-            <ProductBrief product={product} />
-            <div className='detail-banner'>
-                <h1>ĐẶC TRƯNG</h1>
-            </div>
-            {product.productType !== 'accessary' ?
-                <ProductDetailInfo product={product} /> :
-                <Container className='accessory-detail'>
-                    <h5>Mô tả: </h5>
-                    <p>{product.aboutProduct}</p>
-                </Container>}
-            <div className='suggest-product'>
-                <SuggestProduct />
-            </div>
-        </Container>
+        isLoading ? <h1 style={{ marginTop: "12rem" }}>Loading.......</h1> :
+            Object.keys(product).length === 0 ? <h1 style={{ marginTop: "12rem" }}>Loading.......</h1> :
+                <Container className='product-wrapper'>
+                    <Breadcrumb data={dataBread} />
+                    <ProductBrief product={product} />
+                    <div className='detail-banner'>
+                        <h1>THÔNG TIN SẢN PHẨM</h1>
+                    </div>
+                    <ProductDetailInfo product={product} />
+                    <div className='suggest-product'>
+                        <SuggestProduct />
+                    </div>
+                </Container>
     )
 }
 export default Product 

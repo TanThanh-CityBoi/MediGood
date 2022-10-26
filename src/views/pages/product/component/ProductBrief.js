@@ -7,7 +7,7 @@ import './ProductBrief.scss'
 function ProductBrief(props) {
     const dispatch = useDispatch();
 
-    const [currentImg, setCurrentImg] = useState({ val: props.product.avtURL, id: 0 });
+    const [currentImg, setCurrentImg] = useState({ val: props.product.thumbnailUrl, id: 0 });
     const handleImgClick = (val, id) => {
         setCurrentImg({ val: val, id: id });
     }
@@ -36,12 +36,12 @@ function ProductBrief(props) {
                 <Col xs={12} lg={6} className="product-img-group">
                     <div className='img-list'>
                         <img
-                            onClick={() => handleImgClick(props.product.avtURL, 0)}
-                            src={props.product.avtURL}
+                            onClick={() => handleImgClick(props.product.thumbnailUrl, 0)}
+                            src={props.product.thumbnailUrl}
                             alt='product-img'
                             className={currentImg.id === 0 ? "img-active" : ""}
                         ></img>
-                        {props.product.imgURLs.map((val, idx) => (
+                        {props.product.imgUrls.map((val, idx) => (
                             <img
                                 key={idx}
                                 onClick={() => handleImgClick(val, idx + 1)}
@@ -59,7 +59,7 @@ function ProductBrief(props) {
                     <Container>
 
                         <div className='product-code'>
-                            <p>Mã sản phẩm: {props.product.sku}</p>
+                            <p>Mã sản phẩm: {props.product.productCode}</p>
                         </div>
                         <div className='product-name'>
                             <p>{props.product.name}</p>

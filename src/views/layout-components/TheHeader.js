@@ -43,11 +43,9 @@ const TheHeader = () => {
 
   function handleSearch(e) {
     e.preventDefault();
-    console.log(searchKey);
     navigate(`/tim-kiem?key=${searchKey}`);
   }
   function HandleLogOutOnClick() {
-    console.log("Click", appActions);
     dispatch(
       appActions.openConfirmDialog("Bạn có muốn đăng xuất ?", () =>
         dispatch(

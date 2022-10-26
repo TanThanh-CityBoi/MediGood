@@ -7,19 +7,11 @@ import "./ProductComponent.scss";
 import { useDispatch } from "react-redux";
 import { userActions } from "../../../actions";
 
-function ProductName(props) {
-  return (
-    <>
-      <Card.Text className="product-name">{props.name}</Card.Text>
-    </>
-  );
-}
 function Description(props) {
   return (
     <>
       <Card.Text className="desciption">
-        {props.origin}, {props.producer}, {props.color.toString()},{" "}
-        {props.capacity}ml{" "}
+        {props.origin}, {props.producer}, {props.age + ' T'},{" "}
       </Card.Text>
     </>
   );
@@ -132,14 +124,13 @@ const ProductComponent = (props) => {
     <>
       <div className="product-card discount-product">
         <Card style={{ height: "44rem" }}>
-          <Card.Img variant="top" src={props.product.avtURL} />
+          <Card.Img variant="top" src={props.product.thumbnailUrl} />
           <Card.Body>
-            <ProductName name={props.product.name} />
+            <Card.Text className="product-name">{props.product.name}</Card.Text>
             <Description
               origin={props.product.origin}
               producer={props.product.producer}
-              color={props.product.color}
-              capacity={props.product.capacity}
+              age={props.product.age}
             />
             {props.product.price < props.product.originPrice ? (
               <OldPrice
@@ -156,8 +147,6 @@ const ProductComponent = (props) => {
             )}
             <NewPrice newPrice={props.product.price} />
           </Card.Body>
-          {props.product.isNewProduct ? <NewTag /> : <></>}
-          {props.product.isSpecialProduct ? <SpecialTag /> : <></>}
           <HoverContent id={props.product._id} />
         </Card>
       </div>

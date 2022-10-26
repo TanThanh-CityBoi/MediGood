@@ -42,10 +42,10 @@ function CartItem(props) {
     <Row className="cart-item">
       <Col xs={12} md={6} className="left-grid">
         <div className="product-img">
-          <img src={props.product.avtURL}></img>
+          <img src={props.product.thumbnailUrl}></img>
         </div>
         <div className="product-name">
-          <p>Mã sản phẩm: {props.product.sku}</p>
+          <p>Mã sản phẩm: {props.product.productCode}</p>
           <h1>{props.product.name}</h1>
         </div>
       </Col>

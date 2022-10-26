@@ -1,5 +1,5 @@
 {
-  "name": "luxy-wine",
+  "name": "MediGood-FE",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -46,6 +46,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
+    "prestart": "npm i",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

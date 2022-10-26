@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { appActions, productActions, receiptActions } from "../../../actions";
 import { AiOutlineEdit } from "react-icons/ai";
 import { numberUtils } from "../../../utilities";
 import { Container } from "react-bootstrap";
 import DataTableComponent from "./component/DataTableComponent";
 import "./Receipt.scss";
-//import ShipmentStatusModal from "./ShipmentStatusModal";
+
 function Receipt(props) {
   const [receiverAddressModal, setReceiverAddressModal] = useState(false);
   var formatter = new Intl.NumberFormat("vi-VN", {
@@ -32,10 +32,10 @@ function Receipt(props) {
       width: 300,
       flex: 1,
       renderCell: (params) => {
-        const { avtURL, name } = params.row;
+        const { thumbnailUrl, name } = params.row;
         return (
           <div className="product-info-cell display-flex">
-            <img src={avtURL} height="50px" alt="" />
+            <img src={thumbnailUrl} height="50px" alt="" />
             <div
               style={{ marginLeft: "12px", textAlign: "left" }}
               className="price-wrapper"
@@ -55,7 +55,7 @@ function Receipt(props) {
         );
       },
     },
-    { field: "sku", headerName: "Mã SKU", width: 150 },
+    { field: "productCode", headerName: "Mã SP", width: 150 },
     { field: "quantity", headerName: "Số lượng", width: 150 },
     {
       field: "price",
@@ -94,14 +94,13 @@ function Receipt(props) {
     temp.id = item.product._id;
     temp.stt = index + 1;
     temp.name = item.product.name;
-    temp.sku = item.product.sku;
+    temp.productCode = item.product.productCode;
     temp.quantity = item.quantity;
     temp.price = item.product.price;
     temp.total = item.product.price * item.quantity;
-    temp.avtURL = item.product.avtURL;
+    temp.thumbnailUrl = item.product.thumbnailUrl;
     return temp;
   });
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleCancelOrder = () => {
     dispatch(
@@ -154,11 +153,9 @@ function Receipt(props) {
         </div>
         <p className="infomation-content">
           <strong>{`${receipt.receiver?.name}`}</strong>
-          {`(${receipt?.receiver?.phone}) \n ${
-            receipt.receiver?.description ? receipt.receiver?.description : ""
-          } ${receipt.receiver?.ward.name} ${receipt.receiver?.district.name} ${
-            receipt.receiver?.province.name
-          }`}
+          {`(${receipt?.receiver?.phone}) \n ${receipt.receiver?.description ? receipt.receiver?.description : ""
+            } ${receipt.receiver?.ward.name} ${receipt.receiver?.district.name} ${receipt.receiver?.province.name
+            }`}
         </p>
       </div>
 

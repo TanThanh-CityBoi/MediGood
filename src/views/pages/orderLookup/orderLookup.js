@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Banner } from "../../component/BannerProduct";
-import { SuggestProduct } from "../../component/SuggestProduct";
 import "./orderLookup.scss";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  bannerActions,
-  newsActions,
-  productActions,
-  receiptActions,
-  voucherActions,
-} from "../../../actions";
+import { receiptActions } from "../../../actions";
 import SliderComponent from "../../component/SliderComponent/SliderComponent";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Breadcrumb } from "../../component/Breadcrumb";
-import { ProductComponent } from "../../component/product-component/ProductComponent";
-import { PaginationCustom } from "../../component/PaginationCustom";
 import DataTableComponent from "../manager/component/DataTableComponent";
 import { numberUtils } from "../../../utilities";
 
@@ -41,7 +32,7 @@ const OrderLookup = () => {
   const [isSearched, setIsSearched] = useState(false);
   const receipt = useSelector((state) => state.receiptReducer.receipt) || {};
   console.log(statusList[receipt.status]);
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   const handleSearchClick = () => {
     console.log("hha");
     navigate(`/tra-cuu-don-hang?q=${searchKey}`);
@@ -59,10 +50,10 @@ const OrderLookup = () => {
       width: 300,
       flex: 1,
       renderCell: (params) => {
-        const { avtURL, name, price } = params.row;
+        const { thumbnailUrl, name, price } = params.row;
         return (
           <div className="product-info-cell display-flex">
-            <img src={avtURL} height="50px" alt="" />
+            <img src={thumbnailUrl} height="50px" alt="" />
             <div
               style={{ marginLeft: "12px", textAlign: "left" }}
               className="price-wrapper"
@@ -82,7 +73,7 @@ const OrderLookup = () => {
         );
       },
     },
-    { field: "sku", headerName: "Mã SKU", width: 150 },
+    { field: "productCode", headerName: "Mã SP", width: 150 },
     { field: "quantity", headerName: "Số lượng", width: 150 },
     {
       field: "price",
@@ -119,11 +110,11 @@ const OrderLookup = () => {
     temp.id = item.product._id;
     temp.stt = index + 1;
     temp.name = item.product.name;
-    temp.sku = item.product.sku;
+    temp.productCode = item.product.productCode;
     temp.quantity = item.quantity;
     temp.price = item.product.price;
     temp.total = item.product.price * item.quantity;
-    temp.avtURL = item.product.avtURL;
+    temp.thumbnailUrl = item.product.thumbnailUrl;
     return temp;
   });
   return (
@@ -169,8 +160,8 @@ const OrderLookup = () => {
       </div>
       {isSearched &&
         (receipt && // 👈 null and undefined check
-        Object.keys(receipt).length === 0 &&
-        Object.getPrototypeOf(receipt) === Object.prototype ? (
+          Object.keys(receipt).length === 0 &&
+          Object.getPrototypeOf(receipt) === Object.prototype ? (
           <h1 className="search-title">
             Không tìm thấy đơn hàng với mã hóa đơn{" "}
             {`"${searchParams.get("q")}"`}
@@ -190,7 +181,7 @@ const OrderLookup = () => {
                 columnDocs={columnDocs}
                 rowDocs={cartItems || []}
                 autoHeight={true}
-                // filter={filter}
+              // filter={filter}
               />
             </div>
 

@@ -93,7 +93,6 @@ function Profile() {
     return (
         <Container className='profile-wrapper'>
             <Breadcrumb data={dataBread} />
-
             <ProfileBanner />
             <Row className='profile-row'>
                 <Col xs={12} md={5} className='profile-col_left'>

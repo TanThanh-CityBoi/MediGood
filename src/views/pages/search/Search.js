@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Banner } from "../../component/BannerProduct";
-import { SuggestProduct } from "../../component/SuggestProduct";
 import "./Search.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -58,17 +57,11 @@ const Search = () => {
     currentPage * elementPerPage
   );
 
-  const newsInPage = newsList?.slice(
-    (currentPage - 1) * elementPerPage,
-    currentPage * elementPerPage
-  );
+  // const newsInPage = newsList?.slice(
+  //   (currentPage - 1) * elementPerPage,
+  //   currentPage * elementPerPage
+  // );
 
-  const vouchersInPage = vouchers?.slice(
-    (currentPage - 1) * elementPerPage,
-    currentPage * elementPerPage
-  );
-
-  const [currentTab, setCurrentTab] = useState(1);
   const [category, setCategory] = useState(0);
 
   return (

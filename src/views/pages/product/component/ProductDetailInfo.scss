@@ -13,70 +13,34 @@
             div {
                 margin-right: 3rem;
                 min-width: 20rem;
+                margin-bottom: 1.6rem;
 
                 h1 {
                     font-weight: 500;
-                    font-size: 18px;
-                    line-height: 22px;
+                    font-size: 1.4rem;
+                    line-height: 1.7rem;
                     color: #6C6C6C;
-                    margin-bottom: 1rem;
+                    margin-bottom: .5rem;
                 }
 
-                .temperature {
+                .category {
                     font-weight: 400;
-                    font-size: 48px;
-                    line-height: 59px;
+                    font-size: 1.8rem;
+                    line-height: 2.2rem;
                     color: #000000;
                 }
 
-                .product-color {
+                .other-product-info {
                     font-weight: 500;
-                    font-size: 18px;
-                    line-height: 22px;
-                    margin-bottom: 1.5rem;
-
-                    svg {
-                        height: 2.7rem;
-                        width: 2.7rem;
-                        margin-right: 1rem;
-                        margin-left: 1rem;
-                    }
-
-                    .product-color-red {
-                        color: #880000;
-                    }
-
-                    .product-color-white {
-                        color: #c7c7c7;
-                    }
-
-                    .product-color-pink {
-                        color: #fa5dcb;
-                    }
-
-                    .product-color-blue {
-                        color: #5dbbfa;
-                    }
-                }
-
-                .food-product {
-                    font-weight: 500;
-                    font-size: 16px;
-                    line-height: 20px;
+                    font-size: 1.6rem;
+                    line-height: 2rem;
                     color: #000000;
-
-                    img {
-                        height: 4rem;
-                        width: 4rem;
-                        margin-right: 1rem;
-                    }
                 }
             }
         }
     }
 
     .right-grid {
-
         .list-item {
             display: flex;
             flex-wrap: wrap;
