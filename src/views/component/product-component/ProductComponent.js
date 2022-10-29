@@ -18,7 +18,7 @@ function Description(props) {
   return (
     <>
       <Card.Text className="desciption">
-        {props.origin}, {props.producer}, {props.color.toString()},{" "}
+        {props.origin}, {props.producer}, {props.color?.toString()},{" "}
         {props.capacity}ml{" "}
       </Card.Text>
     </>

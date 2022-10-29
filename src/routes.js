@@ -127,7 +127,7 @@ const protectedRoute = [
 
 const managerRoute = [
   { path: "/quan-ly/dashboard", name: "Dashboard", element: <Dashboard /> },
-    ///---------------------------
+  ///---------------------------
   { path: "/quan-ly/san-pham", name: "Dashboard", element: <ProductList /> },
   { path: "/quan-ly/san-pham/new", name: "Dashboard", element: <NewProduct /> },
   {
@@ -140,7 +140,7 @@ const managerRoute = [
     name: "Dashboard",
     element: <ProductDetail />,
   },
-    ///---------------------------
+  ///---------------------------
   { path: "/quan-ly/tin-tuc", name: "Dashboard", element: <NewsList /> },
   { path: "/quan-ly/tin-tuc/new", name: "Dashboard", element: <NewNews /> },
   {
@@ -163,22 +163,22 @@ const managerRoute = [
     element: <UserDetail />,
   },
   ///---------------------------
-  { path: "/quan-ly/khuyen-mai", name: "Dashboard", element: <VoucherList /> },
-  {
-    path: "/quan-ly/khuyen-mai/new",
-    name: "Dashboard",
-    element: <NewVoucher />,
-  },
-  {
-    path: "/quan-ly/khuyen-mai/edit/:id",
-    name: "Dashboard",
-    element: <EditVoucher />,
-  },
-  {
-    path: "/quan-ly/khuyen-mai/:id",
-    name: "Dashboard",
-    element: <VoucherDetail />,
-  },
+  // { path: "/quan-ly/khuyen-mai", name: "Dashboard", element: <VoucherList /> },
+  // {
+  //   path: "/quan-ly/khuyen-mai/new",
+  //   name: "Dashboard",
+  //   element: <NewVoucher />,
+  // },
+  // {
+  //   path: "/quan-ly/khuyen-mai/edit/:id",
+  //   name: "Dashboard",
+  //   element: <EditVoucher />,
+  // },
+  // {
+  //   path: "/quan-ly/khuyen-mai/:id",
+  //   name: "Dashboard",
+  //   element: <VoucherDetail />,
+  // },
 
   { path: "/quan-ly/hoa-don", name: "Dashboard", element: <ReceiptList /> },
   { path: "/quan-ly/hoa-don/new", name: "Dashboard", element: <NewReceipt /> },
@@ -193,12 +193,12 @@ const managerRoute = [
     element: <ReceiptDetail />,
   },
 
-  { path: "/quan-ly/banner", name: "Dashboard", element: <BannerList /> },
-  {
-    path: "/quan-ly/banner/edit/:id",
-    name: "Dashboard",
-    element: <EditBanner />,
-  },
+  // { path: "/quan-ly/banner", name: "Dashboard", element: <BannerList /> },
+  // {
+  //   path: "/quan-ly/banner/edit/:id",
+  //   name: "Dashboard",
+  //   element: <EditBanner />,
+  // },
 ];
 
 const routes = {

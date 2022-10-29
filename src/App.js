@@ -8,7 +8,6 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <ConfirmAgeModal />
         <Routers />
         <ToastComponent></ToastComponent>
       </BrowserRouter>

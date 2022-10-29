@@ -11,17 +11,17 @@ import { dateUltils } from "../../../../../../utilities/date.ultil";
 const columnDocs = [
   // {field: , headerName: , width: }
   { field: "stt", headerName: "STT", width: 50 },
-  { field: "sku", headerName: "Mã SKU", width: 150 },
+  { field: "productCode", headerName: "Mã SKU", width: 150 },
   {
     field: "action",
     headerName: "Sản phẩm",
     minWidth: 300,
     flex: 1,
     renderCell: (params) => {
-      const { avtURL, name, price } = params.row;
+      const { thumbnailUrl, name, price } = params.row;
       return (
         <div className="product-info-cell display-flex">
-          <img src={avtURL} height="50px" alt="" />
+          <img src={thumbnailUrl} height="50px" alt="" />
           <div
             style={{ marginLeft: "12px", textAlign: "left" }}
             className="price-wrapper"
@@ -86,7 +86,7 @@ function ProductList(props) {
   };
 
   const editCourseHandleOnClick = (e) => {
-    navigate(`/quan-ly/san-pham/${e.id}`);
+    navigate(`/quan-ly/san-pham/edit/${e.id}`);
   };
 
   const addProductOnClick = () => {
@@ -102,7 +102,7 @@ function ProductList(props) {
         <div className="data-table-container">
           <div className="table-header">
             <div className="heading">
-              <div className="header">Danh sách khóa học</div>
+              <div className="header">Danh sách sản phẩm</div>
               <LeadingIconButton
                 icon={<AiOutlineExport size={18} />}
                 content={"Xuất Excel"}

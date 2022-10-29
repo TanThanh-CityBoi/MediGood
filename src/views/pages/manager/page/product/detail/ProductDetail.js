@@ -42,7 +42,7 @@ function ProductDetail(props) {
             Xóa
           </span>
         </div>
-        <Product />
+        {/* <Product /> */}
       </div>
     </>
   );
