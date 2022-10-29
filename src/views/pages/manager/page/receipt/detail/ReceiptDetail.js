@@ -37,10 +37,10 @@ function ReceiptDetail(props) {
       width: 300,
       flex: 1,
       renderCell: (params) => {
-        const { avtURL, name, price } = params.row;
+        const { thumbnailUrl, name, price } = params.row;
         return (
           <div className="product-info-cell display-flex">
-            <img src={avtURL} height="50px" alt="" />
+            <img src={thumbnailUrl} height="50px" alt="" />
             <div
               style={{ marginLeft: "12px", textAlign: "left" }}
               className="price-wrapper"
@@ -60,7 +60,7 @@ function ReceiptDetail(props) {
         );
       },
     },
-    { field: "sku", headerName: "Mã SKU", width: 150 },
+    { field: "productCode", headerName: "Mã SKU", width: 150 },
     { field: "quantity", headerName: "Số lượng", width: 150 },
     {
       field: "price",
@@ -100,11 +100,11 @@ function ReceiptDetail(props) {
     temp.id = item.product._id;
     temp.stt = index + 1;
     temp.name = item.product.name;
-    temp.sku = item.product.sku;
+    temp.productCode = item.product.productCode;
     temp.quantity = item.quantity;
     temp.price = item.product.price;
     temp.total = item.product.price * item.quantity;
-    temp.avtURL = item.product.avtURL;
+    temp.thumbnailUrl = item.product.thumbnailUrl;
     return temp;
   });
   const navigate = useNavigate();
@@ -276,38 +276,13 @@ function ReceiptDetail(props) {
           </span>
         </div>
 
-        <div className="display-flex justify-content-between">
-          <span className="receipt-brief">
-            Voucher khuyến mãi{" "}
-            {receipt.voucher && (
-              <span
-                onClick={() => {
-                  navigate(`/quan-ly/khuyen-mai/${receipt.voucher.voucher}`);
-                }}
-                style={{
-                  fontSize: "12px",
-                  color: "red",
-                  cursor: "pointer",
-                }}
-              >
-                Chỉ tiết
-              </span>
-            )}{" "}
-          </span>
-          <span className="money-formatter">
-            {receipt.voucher?.amount.toLocaleString() || 0} VNĐ
-          </span>
-        </div>
-
+        
         <div className="display-flex justify-content-between">
           <span className="receipt-brief">Phí giao hàng</span>
           <span className="money-formatter">50.000 VNĐ</span>
         </div>
 
-        <div className="display-flex justify-content-between">
-          <span className="receipt-brief">Đã thanh toán</span>
-          <span className="money-formatter">0 VNĐ</span>
-        </div>
+       
 
         <div className="display-flex justify-content-between">
           <span style={{ fontWeight: "bold" }} className="receipt-brief">
@@ -318,8 +293,7 @@ function ReceiptDetail(props) {
               cartItems?.reduce((accumulate, crr) => {
                 return crr.total + accumulate;
               }, 0) +
-                50000 -
-                receipt.voucher?.amount || 0
+                50000 
             ).toLocaleString()}{" "}
             VNĐ
           </span>

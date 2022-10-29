@@ -334,7 +334,7 @@ function EditReceiptCartModal({ receipt, open, handleClose }) {
                 <div className="data-table-container">
                   <div className="table-header">
                     <div className="heading">
-                      <div className="header">Danh sách khóa học</div>
+                      <div className="header">Danh sách sản phẩm</div>
                     </div>
                     <div className="filter-container">
                       <p className="filter-label">Nhập bất kỳ để tìm kiếm</p>

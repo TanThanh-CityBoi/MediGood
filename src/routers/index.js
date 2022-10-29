@@ -56,8 +56,10 @@ const Routers = () => {
         />
 
         <Route path="/quan-ly" name="Trang chủ" element={<ManagerContent />}>
-          {!authentication.isLoggedIn ||
-            (authentication?.logedUser.role === "admin" &&
+          {
+           !authentication.isLoggedIn ||
+             (authentication?.logedUser.role === "admin"
+              &&
               routes.managerRoute.map((route, idx) => {
                 return (
                   route.element && (

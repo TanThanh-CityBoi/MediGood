@@ -5,35 +5,184 @@ import { Grid } from "@mui/material";
 import { IoIosAdd } from "react-icons/io";
 import { firebaseStorageServices } from "../../../../../../services";
 import { productActions } from "../../../../../../actions/product.actions";
+import SuneditorComponent from "../../../../../component/suneditor-component/SunEditorComponent";
+
 function SingleLessonForm({ product, onSubmit }) {
+  const InputFields = [
+    {
+      label: "Mã sản phẩm",
+      type: "text",
+      name: "productCode",
+      initialValue: "",
+    },
+    {
+      label: "Tên sản phẩm",
+      type: "text",
+      name: "name",
+      initialValue: "",
+    },
+    {
+      label: "Số lượng",
+      type: "number",
+      name: "quantity",
+      initialValue: 0,
+    },
+    {
+      label: "Giá nhập",
+      type: "number",
+      name: "importPrice",
+      initialValue: 0,
+    },
+    {
+      label: "Giá bán gốc",
+      type: "number",
+      name: "originPrice",
+      initialValue: 0,
+    },
+    {
+      label: "Giá bán chính thức",
+      type: "number",
+      name: "price",
+      initialValue: 0,
+    },
+    {
+      label: "Danh mục",
+      type: "select",
+      options: [
+        {
+          value: "thuoc-than-kinh",
+          label: "Thuốc thần kinh"
+        },
+        {
+          value: "thuoc-xuong-khop",
+          label: "Thuốc xương khớp"
+        },
+        {
+          value: "thuoc-ho-hap",
+          label: "Thuốc hô hấp"
+        },
+        {
+          value: "thuoc-tieu-hoa",
+          label: "Thuốc tiêu hóa"
+        },
+        {
+          value: "thuoc-tuan-hoan",
+          label: "Thuốc tuần hoàn"
+        },
+        {
+          value: "khac",
+          label: "Khác"
+        },
+      ],
+      name: "category",
+      initialValue: "",
+    },
+    {
+      label: "Xuất sứ",
+      type: "text",
+      name: "origin",
+      initialValue: "",
+    },
+    {
+      label: "Nhà sản xuất",
+      type: "text",
+      name: "producer",
+      initialValue: "",
+    },
+
+    {
+      label: "Độ tuổi sử dụng tối thiểu",
+      type: "number",
+      name: "minAge",
+      initialValue: 0,
+    },
+    {
+      label: "Độ tuổi sử dụng tối đa",
+      type: "number",
+      name: "maxAge",
+      initialValue: 100,
+    },
+    {
+      label: "Dạng bào chế",
+      type: "select",
+      options: [
+        {
+          value: "dung-dich",
+          label: "Dung dịch"
+        },
+        {
+          value: "vien-nen",
+          label: "Viên nén"
+        },
+        {
+          value: "vien-nan",
+          label: "Viên nan"
+        },
+        {
+          value: "sui",
+          label: "Dạng sủi"
+        },
+        {
+          value: "khac",
+          label: "Khác"
+        },
+      ],
+      name: "dosageForm",
+      initialValue: "dung-dich",
+    },
+
+    {
+      label: "Lưu ý",
+      type: "textarea",
+      name: "note",
+      initialValue: "",
+    },
+    {
+      label: "Về sản phẩm",
+      type: "html",
+      name: "aboutProduct",
+      initialValue: "",
+    },
+
+    {
+      label: "Hạn sử dụng",
+      type: "date",
+      name: "experation",
+      initialValue: "",
+    },
+    {
+      label: "Số lượng đã bán",
+      type: "number",
+      name: "hasSold",
+      initialValue: "",
+    },
+  ];
   console.log("product nè", product);
   const initialValues = {
-    sku: "",
+    thumbnailUrl: undefined,
+    imgUrls: [],
+    productCode: "",
     name: "",
-    avtURL: undefined,
-    imgURLs: [],
     quantity: 0,
     importPrice: 0, // Giá nhập
     originPrice: 0, // Giá bán gốc
     price: 0, // Giá bán đã sale
-    temperature: { minimum: 0, maximum: 100 }, // Nhiệt độ sử dụng
-    color: "red",
-    foods: [],
+
+    category: "thuoc-than-kinh",
     origin: "", // Xuất xứ
     producer: "", //Nhà sản xuất
-    concentrationPercent: 0, //  nồng độ cồn ( tính theo %)
-    capacity: 0, // Dung tích (ml)
-    vintage: "", // Năm sản xuất
-    aboutProduct: "", // Một đoạn ngắn mô tả thông tin sản phẩm
-    sugar: 0, // Hàm lượng đường
+    age: "5-12", // Độ tuổi sử dụng
+    minAge: product?.age ? product.age[0] : 0,
+    maxAge: product?.age ? product.age[1] : 0,
+    dosageForm: "dung-dich", // Một đoạn ngắn mô tả thông tin sản phẩm
+    note: "", // Một đoạn ngắn mô tả thông tin sản phẩm
+    aboutProduct: "html code",
     experation: undefined, //Date.now(), //Date
-    productType: "wine", // wine/combo/accessory
-    isSpecialProduct: false,
-    isNewProduct: false,
+    hasSold: 100,
     ...product,
   };
   console.log("initial value nè", initialValues);
-
+  console.log({product})
   const foodList = [
     "Phô mai",
     "Bánh ngọt",
@@ -48,14 +197,19 @@ function SingleLessonForm({ product, onSubmit }) {
   ];
 
   const validationSchema = Yup.object({
-    sku: Yup.string().required("Đây là trường bắt buộc"),
+    productCode: Yup.string().required("Đây là trường bắt buộc"),
     name: Yup.string().required("Đây là trường bắt buộc"),
-    // avtURL: Yup.string().required("Đây là trường bắt buộc"),
     quantity: Yup.number().min(0).required("Đây là trường bắt buộc"),
     importPrice: Yup.number().min(0).required("Đây là trường bắt buộc"),
     originPrice: Yup.number().min(0).required("Đây là trường bắt buộc"),
     price: Yup.number().min(0).required("Đây là trường bắt buộc"),
-    // aboutProduct: Yup.string().required("Đây là trường bắt buộc"),
+    maxAge: Yup.number().when('minAge', (minAge) => {
+      if (minAge) {
+          return Yup.number()
+              .min(minAge, 'Yêu cầu tuổi lớn hơn')
+              .typeError('Vui lòng nhập giá trị')
+      }
+  }),
   });
 
   const handleChangeAvt = (e, setFieldValue, preUrl) => {
@@ -67,17 +221,17 @@ function SingleLessonForm({ product, onSubmit }) {
           null,
           (err) => console.log(err),
           (url) => {
-            setFieldValue("avtURL", url);
+            setFieldValue("thumbnailUrl", url);
             firebaseStorageServices.deleteFileOnFirebase(preUrl);
           }
         );
         console.log(e.target.files);
-        setFieldValue("avtURL", URL.createObjectURL(e.target.files[0]));
+        setFieldValue("thumbnailUrl", URL.createObjectURL(e.target.files[0]));
       } else alert("Vui lòng tải ảnh lên để cập nhật ảnh đại diện");
     }
   };
 
-  const handleAddImage = (e, imgURLs, setFieldValue) => {
+  const handleAddImage = (e, imgUrls, setFieldValue) => {
     if (e.target.files[0]) {
       if (e.target.files[0]["type"].split("/")[0] === "image") {
         firebaseStorageServices.uploadFileToFirebase(
@@ -86,8 +240,8 @@ function SingleLessonForm({ product, onSubmit }) {
           null,
           (err) => console.log(err),
           (url) => {
-            const tempURLs = [...imgURLs, url];
-            setFieldValue("imgURLs", tempURLs);
+            const tempUrls = [...imgUrls, url];
+            setFieldValue("imgUrls", tempUrls);
           }
         );
       } else alert("Vui lòng tải ảnh lên để cập nhật ảnh đại diện");
@@ -101,7 +255,9 @@ function SingleLessonForm({ product, onSubmit }) {
         initialValues={{ ...initialValues }}
         validationSchema={validationSchema}
         onSubmit={(values) => {
-          console.log(values);
+          values.age = [values.minAge, values.maxAge];
+          delete values["minAge"];
+          delete values["maxAge"];
           onSubmit(values);
         }}
       >
@@ -129,122 +285,75 @@ function SingleLessonForm({ product, onSubmit }) {
                 </h1>
                 <Grid container spacing={4}>
                   <Grid className="single-lesson-form" item xs={12} md={5}>
-                    <div className="input-field">
-                      <label htmlFor="sku">Mã sản phẩm (SKU)</label>
-                      <Field name="sku" type="text" />
-                      {errors.sku && touched.sku && <div>{errors.sku}</div>}
-                    </div>
+                    {InputFields?.map((item) => {
+                      if (item.type == "select")
+                        return (
+                          <div key={item.name} className="input-field">
+                            <label htmlFor={item.name}>{item.label}</label>
+                            <Field as="select" name={item.name}>
+                              {item.options?.map((option) => (
+                                <option key={option.value} value={option.value}>
+                                  {option.label}
+                                </option>
+                              ))}
+                            </Field>
+                            {errors[item.name] && touched[item.name] && (
+                              <div>{errors[item.name]}</div>
+                            )}
+                          </div>
+                        );
 
-                    <div className="input-field">
-                      <label htmlFor="name">Tên sản phẩm</label>
-                      <Field name="name" type="text" />
-                      {errors.name && touched.name && <div>{errors.name}</div>}
-                    </div>
+                      if (item.type == "html")
+                        return (
+                          <div className="input-field">
+                            <label htmlFor="content">{item.label}</label>
+                            <SuneditorComponent
+                              id={item.name}
+                              initialContent={values[item.name]}
+                              title={""}
+                              contentOnChange={(contentHtml) => {
+                                setFieldValue(item.name, contentHtml);
+                              }}
+                            />
+                          </div>
+                        );
 
-                    <div className="input-field">
-                      <label htmlFor="aboutProduct ">Mô tả</label>
-                      <textarea
-                        value={values.aboutProduct}
-                        onChange={handleChange}
-                        name="aboutProduct"
-                        id="aboutProduct"
-                      />
-                      {errors.aboutProduct && touched.aboutProduct && (
-                        <div>{errors.aboutProduct}</div>
-                      )}
-                    </div>
-
-                    <div className="input-field">
-                      <label htmlFor="quantity">Số lượng</label>
-                      <Field name="quantity" type="number" />
-                      {errors.quantity && touched.quantity && (
-                        <div>{errors.quantity}</div>
-                      )}
-                    </div>
-
-                    <div className="input-field">
-                      <label htmlFor="importPrice">Giá nhập vào</label>
-                      <Field name="importPrice" type="number" />
-                      {errors.importPrice && touched.importPrice && (
-                        <div>{errors.importPrice}</div>
-                      )}
-                    </div>
-
-                    <div className="input-field">
-                      <label htmlFor="originPrice">
-                        Giá bán trước khuyến mãi
-                      </label>
-                      <Field name="originPrice" type="number" />
-                      {errors.originPrice && touched.originPrice && (
-                        <div>{errors.originPrice}</div>
-                      )}
-                    </div>
-
-                    <div className="input-field">
-                      <label htmlFor="price">Giá bán sau khuyến mãi</label>
-                      <Field name="price" type="number" />
-                      {errors.price && touched.price && (
-                        <div>{errors.price}</div>
-                      )}
-                    </div>
-
-                    <div className="input-field">
-                      <label htmlFor="productType"></label>
-                      <label
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          marginRight: "12px",
-                        }}
-                      >
-                        <Field type="radio" name="productType" value="wine" />
-                        Rượu
-                      </label>
-
-                      <label
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          marginRight: "12px",
-                        }}
-                      >
-                        <Field type="radio" name="productType" value="combo" />
-                        Combo
-                      </label>
-
-                      <label
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          marginRight: "12px",
-                        }}
-                      >
-                        <Field
-                          type="radio"
-                          name="productType"
-                          value="accessary"
-                        />
-                        Phụ kiện
-                      </label>
-
-                      <label
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          marginRight: "12px",
-                        }}
-                      >
-                        <Field type="radio" name="productType" value="gift" />
-                        Hộp quà
-                      </label>
-                    </div>
+                      if (item.type == "date")
+                        return (
+                          <div className="input-field">
+                            <label htmlFor="sugar">{item.label}</label>
+                            <input
+                              type="date"
+                              id={item.name}
+                              name={item.name}
+                              value={values[item.name]}
+                              onChange={handleChange}
+                            ></input>
+                            {errors[item.name] && (
+                              <p className="input-error-validation">
+                                {" "}
+                                {errors[item.name]}{" "}
+                              </p>
+                            )}
+                          </div>
+                        );
+                      return (
+                        <div className="input-field">
+                          <label htmlFor="productCode">{item.label}</label>
+                          <Field name={item.name} type={item.type} />
+                          {errors[item.name] && touched[item.name] && (
+                            <div>{errors[item.name]}</div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </Grid>
 
                   <Grid className="lesson-video-views" item xs={12} md={6}>
                     <div className="input-field">
-                      <label htmlFor="avtURL ">Ảnh đại diện</label>
+                      <label htmlFor="thumbnailUrl ">Ảnh đại diện</label>
                       <div style={{ width: "5px", height: "8px" }}></div>
-                      <label htmlFor="avtURL">
+                      <label htmlFor="thumbnailUrl">
                         <span
                           style={{ display: "inline-block" }}
                           className="lw-btn"
@@ -254,39 +363,39 @@ function SingleLessonForm({ product, onSubmit }) {
                       </label>
                       <div style={{ width: "5px", height: "8px" }}></div>
                       <input
-                        id="avtURL"
+                        id="thumbnailUrl"
                         style={{ display: "none" }}
                         type="file"
                         onChange={(e) =>
-                          handleChangeAvt(e, setFieldValue, values.avtURL)
+                          handleChangeAvt(e, setFieldValue, values.thumbnailUrl)
                         }
                       />
                       <img
-                        src={values.avtURL || "ser"}
+                        src={values.thumbnailUrl || "ser"}
                         alt=""
                         height={"250px"}
                         width={"250px"}
                       />
-                      {errors.avtURL && touched.avtURL && (
-                        <div>{errors.avtURL}</div>
+                      {errors.thumbnailUrl && touched.thumbnailUrl && (
+                        <div>{errors.thumbnailUrl}</div>
                       )}
                     </div>
 
                     <div className="input-field">
                       <div className="mistery-box">
-                        <label htmlFor="imgURLs ">Album</label>
+                        <label htmlFor="imgUrls ">Album</label>
                       </div>
 
                       <div className="mistery-box">
                         <input
-                          id="imgURLs"
+                          id="imgUrls"
                           style={{ display: "none" }}
                           type="file"
                           onChange={(e) =>
-                            handleAddImage(e, values.imgURLs, setFieldValue)
+                            handleAddImage(e, values.imgUrls, setFieldValue)
                           }
                         />
-                        {values.imgURLs.map((imgURL, index) => {
+                        {values.imgUrls?.map((imgUrl, index) => {
                           return (
                             <img
                               key={`img-link-${index}`}
@@ -295,7 +404,7 @@ function SingleLessonForm({ product, onSubmit }) {
                                 marginRight: "12px",
                                 display: "inline-block",
                               }}
-                              src={imgURL}
+                              src={imgUrl}
                               alt=""
                               width={"100px"}
                               height={"100px"}
@@ -303,7 +412,7 @@ function SingleLessonForm({ product, onSubmit }) {
                           );
                         })}
                       </div>
-                      <label htmlFor="imgURLs">
+                      <label htmlFor="imgUrls">
                         <div
                           style={{
                             color: "#C3C1C1",
@@ -322,226 +431,14 @@ function SingleLessonForm({ product, onSubmit }) {
                         </div>
                       </label>
 
-                      {errors.imgURLs && touched.imgURLs && (
-                        <div>{errors.imgURLs}</div>
+                      {errors.imgUrls && touched.imgUrls && (
+                        <div>{errors.imgUrls}</div>
                       )}
                     </div>
                   </Grid>
                 </Grid>
               </div>
-              {values.productType == "wine" && (
-                <div className="additional-infomation">
-                  <h1
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "600",
-                      textAlign: "center",
-                      marginBottom: "24px",
-                      marginTop: "36px",
-                    }}
-                  >
-                    Thông tin bổ sung
-                  </h1>
-                  <div className="input-field">
-                    <label
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        marginRight: "12px",
-                        fontWeight: "400",
-                      }}
-                    >
-                      <Field
-                        type="checkbox"
-                        name="isNewProduct"
-                        onChange={handleChange}
-                      />
-                      Là sản phẩm mới
-                    </label>
-                    <div className="mystery-box"></div>
-                    <label
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        marginRight: "12px",
-                        fontWeight: "400",
-                      }}
-                    >
-                      <Field
-                        type="checkbox"
-                        name="isSpecialProduct"
-                        onChange={handleChange}
-                      />
-                      Là sản phẩm đặc biệt
-                    </label>
-                  </div>
 
-                  <div className="input-field">
-                    <label htmlFor="foods ">Món ăn phù hợp</label>
-                    <div className="mystery-box">
-                      {foodList.map((item, index) => {
-                        return (
-                          <span
-                            key={`food-item-${index}`}
-                            style={{
-                              display: "inline-block",
-                              padding: "8px 12px",
-                            }}
-                            className={
-                              values.foods.includes(item)
-                                ? "food-toogle clickable-effect actived"
-                                : "food-toogle clickable-effect"
-                            }
-                            onClick={() => {
-                              let tempValue = [];
-                              if (values.foods.includes(item)) {
-                                tempValue = values.foods.filter(
-                                  (e) => e != item
-                                );
-                              } else {
-                                tempValue = [...values.foods, item];
-                              }
-                              setFieldValue("foods", tempValue);
-                            }}
-                          >
-                            {item}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div className="input-field">
-                    <label htmlFor="color">Màu của rượu</label>
-                    <Field as="select" name="color">
-                      <option value="red">Vang đỏ</option>
-                      <option value="white">Vang trắng</option>
-                      <option value="pink">Vang hồng</option>
-                    </Field>
-                    {errors.color && touched.color && <div>{errors.color}</div>}
-                  </div>
-
-                  <div className="input-field">
-                    <label htmlFor="temperature">Nhiệt độ sử dụng</label>
-                    <div className="input-temporator">
-                      <span style={{ fontSize: "1.4rem", fontWeight: "500" }}>
-                        Từ{" "}
-                      </span>
-                      <Field
-                        style={{ width: "200px", display: "inline" }}
-                        name="temperature.minimum"
-                      ></Field>{" "}
-                      <span style={{ fontSize: "1.4rem", fontWeight: "500" }}>
-                        °C{" "}
-                      </span>
-                      <div
-                        style={{
-                          display: "inline-block",
-                          height: "10px",
-                          width: "30px",
-                        }}
-                      ></div>
-                      <span style={{ fontSize: "1.4rem", fontWeight: "500" }}>
-                        {" "}
-                        Đến{" "}
-                      </span>
-                      <Field
-                        style={{ width: "200px", display: "inline" }}
-                        name="temperature.maximum"
-                      ></Field>
-                      <span style={{ fontSize: "1.4rem", fontWeight: "500" }}>
-                        °C
-                      </span>
-                    </div>
-                  </div>
-
-                  <Grid container spacing={4}>
-                    <Grid item xs={6} md={4}>
-                      <div className="input-field">
-                        <label htmlFor="origin">Xuất sứ</label>
-                        <Field name="origin" type="text" />
-                        {errors.origin && touched.origin && (
-                          <div>{errors.origin}</div>
-                        )}
-                      </div>
-                    </Grid>
-
-                    <Grid item xs={6} md={4}>
-                      <div className="input-field">
-                        <label htmlFor="producer">Nhà sản xuất</label>
-                        <Field name="producer" type="text" />
-                        {errors.producer && touched.producer && (
-                          <div>{errors.producer}</div>
-                        )}
-                      </div>
-                    </Grid>
-                  </Grid>
-
-                  <Grid container spacing={4}>
-                    <Grid item xs={6} md={4}>
-                      <div className="input-field">
-                        <label htmlFor="concentrationPercent">
-                          Nồng độ cồn (%)
-                        </label>
-                        <Field
-                          name="concentrationPercent"
-                          type="number"
-                          max="100"
-                          min="0"
-                        />
-                        {errors.concentrationPercent &&
-                          touched.concentrationPercent && (
-                            <div>{errors.concentrationPercent}</div>
-                          )}
-                      </div>
-                    </Grid>
-
-                    <Grid item xs={6} md={4}>
-                      <div className="input-field">
-                        <label htmlFor="capacity">Dung tích (ml)</label>
-                        <Field name="capacity" type="number" min="0" />
-                        {errors.capacity && touched.capacity && (
-                          <div>{errors.capacity}</div>
-                        )}
-                      </div>
-                    </Grid>
-
-                    <Grid item xs={6} md={4}>
-                      <div className="input-field">
-                        <label htmlFor="sugar">Hàm lượng đường (%)</label>
-                        <Field name="sugar" type="number" max="100" min="0" />
-                        {errors.sugar && touched.sugar && (
-                          <div>{errors.sugar}</div>
-                        )}
-                      </div>
-                    </Grid>
-                  </Grid>
-                  <div className="input-field">
-                    <label htmlFor="vintage">Năm sản xuất</label>
-                    <Field name="vintage" type="number" min="0" />
-                    {errors.vintage && touched.vintage && (
-                      <div>{errors.vintage}</div>
-                    )}
-                  </div>
-
-                  <div className="input-field">
-                    <label htmlFor="sugar">Hạn sử dụng</label>
-                    <input
-                      type="date"
-                      id="experation"
-                      name="experation"
-                      value={values.experation}
-                      onChange={handleChange}
-                    ></input>
-                    {errors.experation && (
-                      <p className="input-error-validation">
-                        {" "}
-                        {errors.experation}{" "}
-                      </p>
-                    )}
-                    {errors.sugar && touched.sugar && <div>{errors.sugar}</div>}
-                  </div>
-                </div>
-              )}
               <button className="lw-btn" style={{ display: "inline-block" }}>
                 Lưu
               </button>

@@ -25,21 +25,21 @@ function TheNavigation() {
       icon: <RiBillLine />,
       link: "/quan-ly/hoa-don",
     },
-    {
-      name: "Quản lý khuyến mãi",
-      icon: <BsFillGiftFill />,
-      link: "/quan-ly/khuyen-mai",
-    },
+    // {
+    //   name: "Quản lý khuyến mãi",
+    //   icon: <BsFillGiftFill />,
+    //   link: "/quan-ly/khuyen-mai",
+    // },
     {
       name: "Quản lý tin tức",
       icon: <BiNews />,
       link: "/quan-ly/tin-tuc",
     },
-    {
-      name: "Quản lý Banner",
-      icon: <GiKnightBanner />,
-      link: "/quan-ly/banner",
-    },
+    // {
+    //   name: "Quản lý Banner",
+    //   icon: <GiKnightBanner />,
+    //   link: "/quan-ly/banner",
+    // },
     {
       name: "Quản lý người dùng",
       icon: <BiUserCircle />,
@@ -61,7 +61,7 @@ function TheNavigation() {
                 navigate("/trang-chu");
               }}
             >
-              Luxy Wine manager
+              MediGood manager
             </h1>
           </div>
           <List className="manager-side-bar">

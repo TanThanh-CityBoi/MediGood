@@ -5,7 +5,7 @@ import './ProductDetailInfo.scss'
 
 function ProductDetailInfo(props) {
     const foodlist = useSelector(state => state.foodReducer.foods);
-
+    console.log("🚀 ~ file: ProductDetailInfo.js ~ line 9 ~ ProductDetailInfo ~ props", props.product.aboutProduct)
     return (
         <Row className="product-detail-info-wrapper">
             <Col xs={12} lg={3} className='left-grid'>
@@ -43,7 +43,7 @@ function ProductDetailInfo(props) {
             </Col>
 
             <Col xs={12} lg={9} className='right-grid'>
-                <div contentEditable='true' dangerouslySetInnerHTML={{ __html: props.product.aboutProduct }}></div>
+                <div dangerouslySetInnerHTML={{ __html: props.product.aboutProduct }}></div>
             </Col>
         </Row>
     )
