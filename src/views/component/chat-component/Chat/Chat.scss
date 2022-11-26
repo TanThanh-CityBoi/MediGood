@@ -5,13 +5,14 @@
   position: fixed;
   bottom: 0;
   right: 60px;
-  z-index: 100;
+  z-index: 100000;
   .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: #ffffff;
     border-radius: 8px;
+    padding: 0;
     .infoBar {
       display: flex;
       align-items: center;
@@ -19,8 +20,7 @@
       background: #2979ff;
       border-radius: 4px 4px 0 0;
       height: 60px;
-      width: 424px;
-      margin-left: -10px;
+      width: 400px;
     }
 
     .leftInnerContainer {

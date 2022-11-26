@@ -8,13 +8,10 @@ import "./Chat.scss"
 import { BsDashLg } from "react-icons/bs"
 import { MdOutlineOpenInNew } from "react-icons/md"
 import { message as MessageAnt } from "antd"
-// const ENDPOINT = "http://project-chat-application.herokuapp.com/"
 const host = "http://localhost:5000/"
 
 const Chat = () => {
   const [name, setName] = useState("")
-  const [room, setRoom] = useState("")
-  const [users, setUsers] = useState("")
   const [message, setMessage] = useState("")
   const [messages, setMessages] = useState([])
   const [isOpenBox, setIsOpenBox] = useState(false)
@@ -45,7 +42,7 @@ const Chat = () => {
 
     // Add chat user
     axios
-      .post("http://localhost:5000/api/user-chat/add-chat-user", {
+      .post(`${host}api/user-chat/add-chat-user`, {
         userID: userInfo._id
       })
       .then((res) => {
@@ -59,20 +56,51 @@ const Chat = () => {
       console.log(data)
     })
 
+    socketRef.current.on("getMessageFromAdmin", (data) => {
+      console.log("dataAdmin", data)
+      setMessages((prev) => {
+        return [
+          ...prev,
+          { message: data.message, time: new Date(), senderId: "admin" }
+        ]
+      })
+    })
+
     return () => {
       socketRef.current.disconnect()
     }
   }, [])
 
-  const sendMessageToAdmin = () => {
+  const getAllUserMessage = () => {
     axios
-      .post("http://localhost:5000/api/user-chat/send-msg-to-admin", {
+      .get(`http://localhost:5000/api/user-chat/get-chat?id=${userInfo._id}`)
+      .then((data) => {
+        // console.log("data", data)
+        setMessages(data?.data?.message?.chat)
+      })
+      .catch((err) => {
+        console.log("err", err)
+      })
+  }
+  useEffect(() => {
+    getAllUserMessage()
+  }, [])
+
+  const sendMessageToAdmin = async () => {
+    axios
+      .post(`${host}api/user-chat/send-msg-to-admin`, {
         id: userInfo._id,
         message
       })
       .then((res) => {
         console.log(res)
         socketRef.current.emit("sendMessageToAdmin", message)
+        setMessages((prev) => {
+          return [
+            ...prev,
+            { message: message, time: new Date(), senderId: userInfo._id }
+          ]
+        })
       })
       .catch((err) => {
         console.log(err.message)
@@ -80,9 +108,10 @@ const Chat = () => {
       })
   }
 
-  const sendMessage = (event) => {
+  const sendMessage = async (event) => {
     event.preventDefault()
     sendMessageToAdmin()
+    setMessage("")
   }
 
   console.log("userInfo", userInfo)
@@ -117,7 +146,7 @@ const Chat = () => {
         </div>
         {isOpenBox && (
           <React.Fragment>
-            <Messages messages={messages} name={name} />
+            <Messages messages={messages} />
             <Input
               message={message}
               setMessage={setMessage}
