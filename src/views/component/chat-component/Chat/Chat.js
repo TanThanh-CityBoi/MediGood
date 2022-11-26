@@ -46,7 +46,7 @@ const Chat = () => {
     // Add chat user
     axios
       .post("http://localhost:5000/api/user-chat/add-chat-user", {
-        name: userInfo._id
+        userID: userInfo._id
       })
       .then((res) => {
         console.log(res)
@@ -82,9 +82,10 @@ const Chat = () => {
 
   const sendMessage = (event) => {
     event.preventDefault()
-    console.log("Nguyễn Công Phi")
     sendMessageToAdmin()
   }
+
+  console.log("userInfo", userInfo)
 
   return (
     <div className="outerContainer">
