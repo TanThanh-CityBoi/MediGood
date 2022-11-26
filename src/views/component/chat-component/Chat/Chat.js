@@ -7,7 +7,7 @@ import socketIOClient from "socket.io-client"
 import "./Chat.scss"
 import { BsDashLg } from "react-icons/bs"
 import { MdOutlineOpenInNew } from "react-icons/md"
-
+import { message as MessageAnt } from "antd"
 // const ENDPOINT = "http://project-chat-application.herokuapp.com/"
 const host = "http://localhost:5000/"
 
@@ -21,9 +21,6 @@ const Chat = () => {
 
   const userInfo = useSelector((state) => state.userReducer.logedUser)
   const socketRef = useRef()
-
-  // add chat user
-  useEffect(() => {}, [])
 
   useEffect(() => {
     socketRef.current = socketIOClient(host, {
@@ -45,8 +42,10 @@ const Chat = () => {
     })
 
     socketRef.current.emit("sendMessageToAdmin", message)
+
+    // Add chat user
     axios
-      .post("http://localhost:5000/api/v1/user/add-chat-user", {
+      .post("http://localhost:5000/api/user-chat/add-chat-user", {
         name: userInfo._id
       })
       .then((res) => {
@@ -65,26 +64,10 @@ const Chat = () => {
     }
   }, [])
 
-  const handleClickSetName = () => {
-    socketRef.current.emit("setName", name)
-  }
-
-  const handleClickSendMessage = () => {
-    socketRef.current.emit("sendMessageToAdmin", message)
+  const sendMessageToAdmin = () => {
     axios
-      .post("http://localhost:5000/api/v1/user/add-chat-user", { name })
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-
-  const handleClickSend = () => {
-    axios
-      .post("http://localhost:5000/api/v1/user/send-msg-to-admin", {
-        id: name,
+      .post("http://localhost:5000/api/user-chat/send-msg-to-admin", {
+        id: userInfo._id,
         message
       })
       .then((res) => {
@@ -93,12 +76,14 @@ const Chat = () => {
       })
       .catch((err) => {
         console.log(err.message)
+        MessageAnt.error("Send message to Admin bug")
       })
   }
 
   const sendMessage = (event) => {
     event.preventDefault()
     console.log("Nguyễn Công Phi")
+    sendMessageToAdmin()
   }
 
   return (
