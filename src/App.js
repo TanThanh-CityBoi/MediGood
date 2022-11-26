@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import "./App.scss"
 import { BrowserRouter } from "react-router-dom"
 import Routers from "./routers"
 import ChatBox from "./views/component/chat-component/ChatBox"
@@ -9,9 +10,11 @@ export default function App() {
   const authentication = useSelector((state) => state.userReducer)
   return (
     <BrowserRouter>
-      <Routers />
-      <ToastComponent></ToastComponent>
-      {authentication.isLoggedIn && <ChatBox />}
+      <div className="main-app">
+        <Routers />
+        <ToastComponent></ToastComponent>
+        {authentication.isLoggedIn && <ChatBox />}
+      </div>
     </BrowserRouter>
   )
 }

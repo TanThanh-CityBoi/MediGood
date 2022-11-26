@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react"
 
-import './Input.css';
-
+import "./Input.css"
+import { BiSend } from "react-icons/bi"
 const Input = ({ setMessage, sendMessage, message }) => (
   <form className="form">
     <input
@@ -10,10 +10,17 @@ const Input = ({ setMessage, sendMessage, message }) => (
       placeholder="Type a message..."
       value={message}
       onChange={({ target: { value } }) => setMessage(value)}
-      onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
+      onKeyPress={(event) => {
+        console.log("abc")
+        if (event.key === "Enter") {
+          sendMessage(event)
+        }
+      }}
     />
-    <button className="sendButton" onClick={e => sendMessage(e)}>Send</button>
+    <button className="sendButton" onClick={(e) => sendMessage(e)}>
+      <BiSend size={20} />
+    </button>
   </form>
 )
 
-export default Input;
+export default Input
