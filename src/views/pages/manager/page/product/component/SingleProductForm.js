@@ -269,7 +269,7 @@ function SingleLessonForm({ product, onSubmit }) {
           handleSubmit,
           setFieldValue,
         }) => {
-          console.log({ values });
+          console.log({ errors });
           return (
             <Form style={{ paddingBottom: "36px" }}>
               <div className="common-infomation-wrapper">
@@ -315,6 +315,9 @@ function SingleLessonForm({ product, onSubmit }) {
                                 setFieldValue(item.name, contentHtml);
                               }}
                             />
+                             {errors[item.name] && touched[item.name] && (
+                              <div>{errors[item.name]}</div>
+                            )}
                           </div>
                         );
 
