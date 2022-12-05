@@ -2,5 +2,14 @@
   padding: 0 0 4px 0;
   overflow: auto;
   flex: auto;
-  height: 400px;
+  height: 350px;
+
+  
+}
+
+
+.messages button{
+  background-color: red;
+  right: 12px;
+  display: none;
 }

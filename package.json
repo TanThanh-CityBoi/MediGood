@@ -41,7 +41,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "slick-carousel": "^1.8.1",
-    "socket.io-client": "^2.2.0",
+    "socket.io-client": "^4.5.1",
     "sub-vn": "0.0.2",
     "suneditor": "^2.43.8",
     "suneditor-react": "^3.4.0",

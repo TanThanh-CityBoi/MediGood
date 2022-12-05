@@ -152,7 +152,7 @@ function FilterComponent(props) {
 
     return (
         <Container className="filter-component-wrapper">
-            <h1>Rượu</h1>
+            <h1>Sản phẩm</h1>
             <div className="filter-group">
                 <Accordion defaultActiveKey={['0', '1']} alwaysOpen>
                     {filters.map((item, index) => (

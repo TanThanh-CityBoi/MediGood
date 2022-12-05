@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./Input.css"
+import "./Input.scss"
 import { BiSend } from "react-icons/bi"
 const Input = ({ setMessage, sendMessage, message }) => (
   <form className="form">
@@ -18,7 +18,7 @@ const Input = ({ setMessage, sendMessage, message }) => (
       }}
     />
     <button className="sendButton" onClick={(e) => sendMessage(e)}>
-      <BiSend size={20} />
+      <BiSend className="icon" size={20} />
     </button>
   </form>
 )

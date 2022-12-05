@@ -22,7 +22,7 @@ const TheFooter = () => {
               fontWeight: "700",
             }}
           >
-            Kho rượu Nhập khẩu chính hãng, giá tốt
+            Kho thuốc Nhập khẩu chính hãng, giá tốt
           </p>
           <p>Địa chỉ: 29 Đường số 8, P. Bình Hưng Hòa A, Q. Bình Tân, TP.HCM</p>
           <p>Số điện thoại: 0386 39 7579 - 090236 4049</p>
