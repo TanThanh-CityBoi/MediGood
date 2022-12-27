@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.15) !important;
+}
+html {
+  font-size: 62.5% !important;
+  line-height: 1.6em;
+  font-family: "Montserrat", sans-serif !important;
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+:root {
+  --primary-color: #222222;
+  --fade-text-color: #747474;
+  --background-color: #fff;
+  --danger-color: #dc3545;
+  --foreground-color: #000;
+  --hover-background-color: #dedede;
+
+  --max-width: 1440px;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.aspect-ratio {
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* The height of the item will now be 56.25% of the width. */
+}
+
+/* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+.aspect-ratio iframe,
+.aspect-ratio img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: contain;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: block;
+  width: 100%;
+}
+
+label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+select,
+input {
+  display: block;
+  padding: 6px 12px;
+  height: 40px;
+  font-size: 1.6rem !important;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 1px;
+  // min-width: 500px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #d5d5d5;
+  &:focus {
+    border: 1px solid #838383;
+    outline: none;
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  outline: none;
+  padding: 12px;
+  font-size: 1.4rem !important;
+  border-radius: 1px;
+  resize: none;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #d5d5d5;
+  &:focus {
+    border: 1px solid #838383;
+    outline: none;
+  }
+}
+
+.lw-btn,
+button {
+  text-align: center;
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: block;
+  line-height: 40px;
+  padding: 0 20px;
+  border-radius: 1px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    //filter: brightness(1.5);
+    opacity: 0.8;
+  }
+}
+
+.lw-btn.text-btn {
+  background-color: transparent;
+  color: var(--foreground-color);
+  &:hover {
+    background-color: var(--hover-background-color);
+    filter: none;
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  height: unset;
+  min-width: unset;
+  margin-right: 8px;
+  width: unset;
+}
+
+.clickable-effect {
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0.5);
+  }
+}
+
+.input-field {
+  margin-bottom: 1.6rem;
+}
+
+.top-right-fixed {
+  position: fixed;
+  top: 100px;
+  right: 24px;
+}
+
+.sun-editor-editable {
+  font-family: "Montserrat", sans-serif;
+}
+
+.icon-button {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+    background-color: var(--hover-background-color);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10rem;
+  border: 1px solid #fff;
+}
+
+::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+}
+
+.lw-outline-btn {
+  border: 1px solid #747474;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: block;
+  line-height: 40px;
+  padding: 0 20px;
+  border-radius: 1px;
+  color: #000;
+  transition: all 0.5s;
+  &:hover {
+    cursor: pointer;
+    background-color: #000;
+    color: white;
+  }
+}

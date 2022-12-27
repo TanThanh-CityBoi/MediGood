@@ -1,0 +1,103 @@
+.manager-wrapper {
+  display: flex;
+  position: relative;
+  .manager-content-wrapper {
+    flex: 1;
+    margin-top: 66px;
+  }
+}
+
+.content-of-manager {
+  padding: 24px;
+
+  .manager-page-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 42px;
+  }
+
+  .food-toogle {
+    background-color: #fff;
+    border: 1px solid #666;
+    color: rgb(102, 102, 102);
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    display: inline-block;
+    margin-right: 12px;
+    border-radius: 15px;
+  }
+  .food-toogle.actived {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+}
+
+.manager-container {
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .lw-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  .list-manager-wapper {
+    width: 100%;
+    background-color: #fff;
+    .title {
+      padding-top: 2.2rem;
+      width: 100%;
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: rgb(120, 0, 0);
+    }
+    .data-table-container {
+      padding-bottom: 32px;
+      text-align: center;
+      margin-top: 2rem;
+      width: 100%;
+      text-align: center;
+      .table-header {
+        justify-self: center;
+
+        .heading {
+          display: flex;
+          justify-content: space-between;
+          .header {
+            font-size: 1.8rem;
+            font-weight: 500;
+          }
+          .export {
+            display: flex;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 2.4rem;
+            .export-title {
+              margin-left: 1rem;
+            }
+          }
+        }
+        .filter-container {
+          .filter-label {
+            display: flex;
+
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 2.4rem;
+          }
+          .filter-input {
+            height: 4rem;
+          }
+        }
+      }
+    }
+  }
+}

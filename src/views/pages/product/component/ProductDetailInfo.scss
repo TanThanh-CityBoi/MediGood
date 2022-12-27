@@ -1,0 +1,94 @@
+.product-detail-info-wrapper {
+    padding: 2.4rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    .left-grid {
+        .left-grid-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            div {
+                margin-right: 3rem;
+                min-width: 20rem;
+                margin-bottom: 1.6rem;
+
+                h1 {
+                    font-weight: 500;
+                    font-size: 1.4rem;
+                    line-height: 1.7rem;
+                    color: #6C6C6C;
+                    margin-bottom: .5rem;
+                }
+
+                .category {
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 2.2rem;
+                    color: #000000;
+                }
+
+                .other-product-info {
+                    font-weight: 500;
+                    font-size: 1.6rem;
+                    line-height: 2rem;
+                    color: #000000;
+                }
+            }
+        }
+    }
+
+    .right-grid {
+        .list-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            min-height: 10rem;
+
+            .information-item {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                min-width: 25rem;
+                height: 5rem;
+                margin-right: 2rem;
+
+                h5 {
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #000000;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-bottom: 0;
+                    margin-left: 1rem;
+                }
+            }
+
+        }
+
+        .description-item {
+            h5 {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+                color: #000000;
+                margin: 0;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                margin: 0;
+            }
+        }
+    }
+}

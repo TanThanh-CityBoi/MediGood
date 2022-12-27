@@ -1,0 +1,64 @@
+.filter-component-wrapper {
+    min-width: 35em;
+    max-width: 114rem;
+    padding: 0rem 1.8rem;
+    h1 {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        color: #000000;
+    }
+
+    .filter-group {
+        .filter-item {
+            border: none;
+            border-bottom: solid 1px #CFCFCF;
+            margin-bottom: 2.7rem;
+
+            .item-header {
+                .accordion-button {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #878787;
+                }
+
+                .accordion-button:hover {
+                    filter: none;
+                }
+
+                .accordion-button:focus {
+                    box-shadow: none;
+                }
+
+                .accordion-button:not(.collapsed):after {
+                    background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23212529%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e');
+                    transform: rotate(-180deg);
+                }
+                .accordion-button:not(.collapsed) {
+                    background-color: #e7e7e7;
+                }
+            }
+
+            .accordion-body {
+                display: flex;
+                align-items: center;
+
+                input {
+                    accent-color: #BDBDBD;
+                    height: 1.8rem;
+                    width: 1.8rem;
+                }
+
+                label {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #000000;
+                    margin-left: 2.2rem;
+                    margin-bottom: 0rem;
+                }
+            }
+        }
+    }
+}

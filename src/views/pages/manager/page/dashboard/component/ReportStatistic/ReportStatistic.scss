@@ -1,0 +1,30 @@
+.general-statistic {
+  margin-top: 12px;
+
+  .card-general-statistic {
+    height: 130px;
+    border-radius: 10px;
+    color: white;
+    padding: 17px 21px;
+
+    .card-general-statistic-data {
+      height: 24px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .card-general-statistic-description {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      padding-top: 8px;
+    }
+  }
+}
+
+.css-1oqqzyl-MuiContainer-root {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

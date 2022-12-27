@@ -1,0 +1,38 @@
+.upload-avatar__modal {
+    .modal-box {
+        .exit-btn {
+            position: absolute;
+            top: 0rem;
+            right: 0rem;
+
+            button {
+                padding: 1rem;
+                margin: 0.5rem;
+                background-color: #FFFFFF;
+
+                svg {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                }
+            }
+        }
+        .preview-img__box{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-color: rgba(0, 0, 0, 0.15);
+           height: 40rem;
+        }
+        .input-img__group{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            .btn-submit{
+                width: 15rem;
+                font-size: 1.5rem;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+}
