@@ -32,7 +32,7 @@ const handleChangeSlideImage = (e, setFieldValue, preUrl, index) => {
   }
 };
 
-const bannerName = ["Trang chủ", "Rượu", "Combo", "Phụ kiện", "Khuyến mãi"];
+const bannerName = ["Trang chủ", "Thuốc", "Combo", "Phụ kiện", "Khuyến mãi"];
 function EditBanner(props) {
   const navigate = useNavigate();
 

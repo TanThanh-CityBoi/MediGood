@@ -51,7 +51,7 @@ function ConfirmAgeModal() {
               marginBottom: "24px",
             }}
           >
-            Bán hoặc cung cấp hoặc lấy rượu thay mặt cho người dưới 18 tuổi là
+            Bán hoặc cung cấp hoặc lấy thuốc thay mặt cho người dưới 18 tuổi là
             vi phạm pháp luật. Điều kiện mua hàng là bạn phải xác minh rằng bạn
             từ 18 tuổi trở lên. Nếu bạn không xác minh rằng bạn đủ 18 tuổi trở
             lên, đơn đặt hàng của bạn sẽ không được xử lý.

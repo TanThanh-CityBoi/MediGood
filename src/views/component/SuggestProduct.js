@@ -14,12 +14,12 @@ function SuggestProduct(props) {
 
   return (
     <div className="suggest-product-wrapper">
-      <Container>
+      {/* <Container>
         <h1>Đề xuất cho bạn</h1>
       </Container>
       <div className="slider-product">
         <SliderProduct products={products} />
-      </div>
+      </div> */}
     </div>
   );
 }

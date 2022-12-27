@@ -1,17 +1,24 @@
 import React, { Component } from "react";
+import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
 import Routers from "./routers";
+import ChatBox from "./views/component/chat-component/ChatBox";
 import ToastComponent from "./views/component/ToastComponent/ToastComponent";
+import { useSelector } from "react-redux";
+import BotChat from "./views/component/chat-component/BotChat/BotChat";
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
+export default function App() {
+  const authentication = useSelector((state) => state.userReducer);
+  return (
+    <BrowserRouter>
+      <div className="main-app">
         <Routers />
         <ToastComponent></ToastComponent>
-      </BrowserRouter>
-    );
-  }
+        <div className="floating-boxchats">
+          <BotChat />
+          {authentication.isLoggedIn && <ChatBox />}
+        </div>
+      </div>
+    </BrowserRouter>
+  );
 }
-
-export default App;

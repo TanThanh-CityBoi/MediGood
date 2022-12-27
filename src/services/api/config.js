@@ -1,8 +1,10 @@
 
 // API URL
-const URL_SYSTEM_V1 = "http://localhost:5000/api";
-// const URL_SYSTEM_V1 = "https://luxy-wine-be.herokuapp.com/api";
-// const URL_SYSTEM_V1 = "https://luxy-wine-be.herokuapp.com/";
+// const URL_MAIN_BE = "http://localhost:5005/";
+const URL_MAIN_BE = "https://medigood-be.onrender.com";
+const URL_SYSTEM_V1 = URL_MAIN_BE + "api";
+// const URL_AI_CHAT_BOT = "http://localhost:5001";
+const URL_AI_CHAT_BOT = "https://ai-chat-bot-predict-diseases.onrender.com/";
 
 
 export default {
@@ -33,4 +35,7 @@ export default {
 
   // Dashboard
   URL_DASHBOARD: URL_SYSTEM_V1 + "/dashboard",
+
+  URL_AI_CHAT_BOT,
+  URL_MAIN_BE
 };
