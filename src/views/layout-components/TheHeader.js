@@ -179,8 +179,8 @@ const TheHeader = () => {
                   <NavLink to={`/tin-tuc`} role="button" className="nav-link">
                     Tin tức
                   </NavLink>
-                  <NavLink to={`/tin-tuc`} role="button" className="nav-link">
-                    Liên hệ
+                  <NavLink to={`/dieu-tri`} role="button" className="nav-link">
+                   Bệnh và cách chữa trị
                   </NavLink>
                 </Nav>
                 <div className="form-wrapper">

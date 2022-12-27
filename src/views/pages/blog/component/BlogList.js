@@ -71,7 +71,7 @@ function BlogList(props) {
                     <div className='news-list'>
                         {Array.from({ length: newsInPage.length }).map((_, idx) => (
                             <div key={idx} className="blog-item">
-                                <BlogCard news={newsInPage[idx]} key={idx} />
+                                <BlogCard style={{marginTop: '24px'}} news={newsInPage[idx]} key={idx} />
                             </div>
                         ))}
                         <div className='news-list-footer'>

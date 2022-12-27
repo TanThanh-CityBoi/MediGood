@@ -11,6 +11,7 @@ const Payment = React.lazy(() => import("./views/pages/payment/Payment"));
 const Profile = React.lazy(() => import("./views/pages/profile/Profile"));
 const Receipt = React.lazy(() => import("./views/pages/receipt/Receipt"));
 const Blogs = React.lazy(() => import("./views/pages/blog/Blogs"));
+const StaticPage = React.lazy(() => import("./views/pages/blog/DieuTri.js"));
 const Blog = React.lazy(() => import("./views/pages/blog/Blog"));
 
 const Dashboard = React.lazy(() =>
@@ -109,6 +110,7 @@ const commonRoute = [
   { path: "/tim-kiem", name: "Thanh toán", element: <Search /> },
   { path: "/tra-cuu-don-hang", name: "Thanh toán", element: <OrderLookup /> },
   { path: "/tin-tuc", name: "Tin tức", element: <Blogs /> },
+  { path: "/dieu-tri", name: "Tin tức", element: <StaticPage /> },
   { path: "/tin-tuc/:id", name: "Tin tức", element: <Blog /> },
 ];
 

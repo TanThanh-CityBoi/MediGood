@@ -22,7 +22,7 @@ const Products = () => {
       {banners.length > 0 && banners[1].slides.length > 0 ? (
         <SliderComponent slides={banners[1].slides} />
       ) : (
-        <Banner url="https://res.cloudinary.com/tanthanh0805/image/upload/v1645178807/LuxyWine/Banner_fxehr3.png" />
+        <Banner url="https://cdn-images.zety.com/pages/pharmacist_cover_letter_example_4.jpg" />
       )}
       <div className="product-list-group">
         <Row className="product-list-group_row">

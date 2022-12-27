@@ -5,12 +5,13 @@
 
   .slider {
     .carousel {
-      height: 80rem;
+      height: 70rem;
       width: 100%;
 
       img {
-        height: 80rem;
+        height: 70rem;
         filter: brightness(0.4);
+        object-fit: cover;
       }
 
       .carousel-caption {
@@ -22,14 +23,14 @@
 
         h1 {
           font-weight: 700;
-          font-size: 72px;
+          font-size: 56px;
           line-height: 88px;
           color: #ffffff;
         }
 
         p {
           font-weight: 400;
-          font-size: 30px;
+          font-size: 20px;
           line-height: 40px;
           color: #ffffff;
         }
@@ -37,6 +38,7 @@
         button {
           font-weight: 700;
           font-size: 24px;
+          margin-top: 24px;
           line-height: 29px;
           color: #000000;
           height: 50px;
@@ -55,7 +57,7 @@
       font-family: "Modern Antiqua";
       font-style: normal;
       font-weight: 500;
-      font-size: 4.7rem;
+      font-size: 4rem;
       line-height: 5.6rem;
       margin: 0rem;
     }
@@ -65,7 +67,7 @@
       margin: 22px 0px;
       font-style: normal;
       font-weight: normal;
-      font-size: 27px;
+      font-size: 20px;
       line-height: 37px;
 
       display: block;
@@ -79,7 +81,7 @@
     .para-2 {
       font-style: normal;
       font-weight: bold;
-      font-size: 27px;
+      font-size: 20px;
       line-height: 37px;
     }
   }
@@ -91,8 +93,9 @@
     height: auto;
 
     h3 {
-      font-weight: 500;
-      font-size: 36px;
+      font-weight: 600;
+      color: #170c3c;
+      font-size: 28px;
       line-height: 44px;
     }
   }
@@ -101,7 +104,7 @@
     .baner-img {
       width: 100%;
       height: 39rem;
-      background-image: url("https://res.cloudinary.com/tanthanh0805/image/upload/v1645178807/LuxyWine/Banner_fxehr3.png");
+      background-image: url("https://cdn-images.zety.com/pages/pharmacist_cover_letter_example_4.jpg");
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -109,12 +112,13 @@
     h3 {
       font-family: "Modern Antiqua";
       font-style: normal;
-      font-weight: 500;
-      font-size: 5rem;
+      font-weight: 600;
+      font-size: 4rem;
       line-height: 5.7rem;
       padding-top: 4rem;
       padding-bottom: 1rem;
       margin: 0;
+      margin-top: 24px;
     }
 
     p {
@@ -122,8 +126,9 @@
       margin: 20px 0px;
       font-style: normal;
       font-weight: normal;
-      font-size: 27px;
+      font-size: 20px;
       line-height: 37px;
+      font-style: italic;
 
       display: block;
       display: -webkit-box;
@@ -141,8 +146,9 @@
     padding: 8rem 2rem 4rem;
 
     h3 {
-      font-weight: 700;
-      font-size: 36px;
+      font-weight: 600;
+      font-family: "Modern Antiqua";
+      font-size: 3rem;
       line-height: 44px;
     }
 
@@ -154,6 +160,7 @@
       .card {
         text-align: start;
         border-radius: 1px;
+        border-radius: 12px;
         background-color: #242424;
         color: #ffffff;
         margin: 10px 0px !important;
@@ -161,16 +168,15 @@
 
         .body {
           padding: 1.6rem;
-
           .card-img {
             display: flex;
             justify-content: center;
             align-items: center;
 
             img {
-              height: 15rem;
-              width: 15rem;
-              border-radius: 50%;
+              height: 12rem;
+              width: 12rem;
+              border-radius: 12px;
               object-fit: cover;
             }
           }
@@ -187,13 +193,13 @@
 
           .card-title {
             font-weight: 700;
-            font-size: 24px;
+            font-size: 20px;
             line-height: 29px;
           }
 
           .card-text {
             font-weight: 400;
-            font-size: 18px;
+            font-size: 14px;
             line-height: 22px;
             color: #b6b6b6;
           }

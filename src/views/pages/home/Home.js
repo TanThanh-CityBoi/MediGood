@@ -53,7 +53,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://res.cloudinary.com/tanthanh0805/image/upload/v1645172016/LuxyWine/slider1_vafvkl.png"
+              src="https://khn.org/wp-content/uploads/sites/2/2021/12/Muldrow__013.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -67,30 +67,29 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://res.cloudinary.com/tanthanh0805/image/upload/v1645174210/LuxyWine/best-online-wine-shops-FT-MAG1019_i07qkl.jpg"
+              src="https://www.rightathome.net/-/media/images/blog/2022/october/pharmacist-helping-senior-in-store.jpg"
               alt="Second slide"
             />
 
             <Carousel.Caption>
               <div className="carousel-content">
-                <h1>Second slide label</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h1>Chuyên cung cấp các loại thuốc, sản phẩm y tế</h1>
+                <p>Luôn đi kèm với sự uy tín và chất lượng, thương hiệu tạo nên sự khác biệt.</p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://res.cloudinary.com/tanthanh0805/image/upload/v1645174206/LuxyWine/ruou-vang-va-mon-an_o8d7ef.png"
+              src="https://globalnews.ca/wp-content/uploads/2018/03/drugs.jpg?quality=85&strip=all"
               alt="Third slide"
             />
 
             <Carousel.Caption>
               <div className="carousel-content">
-                <h1>Third slide label</h1>
+                <h1>Thuốc là bạn của mọi nhà</h1>
                 <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
+                  Phải trải qua cả 1 quá trình dài, con người mới đạt được những thành tựu to lớn về dược học, thuốc.
                 </p>
               </div>
             </Carousel.Caption>
@@ -157,7 +156,7 @@ const Home = () => {
       {
         name: "Nguyễn Thị Thanh Mai",
         content: `Đây là một hạt giống tiềm năng cho khả năng phát triển
-        ngành hàng rượu ngoại ở Việt Nam, giá cả đi đôi với chất
+        ngành hàng thuốc ngoại ở Việt Nam, giá cả đi đôi với chất
         lượng, thái độ phục vụ chuyên nghiệp, phục vụ tận tình, 10
         điểm dành cho Luxy Wine`,
         avt: "https://res.cloudinary.com/tanthanh0805/image/upload/v1640322386/moriiStore/N%C3%A0ng_th%C6%A1__13_jk1or9.jpg",
@@ -165,13 +164,13 @@ const Home = () => {
       {
         name: "Trần Trúc Mã",
         content: `Hết sức tuyệt vời, một trải nghiệm hoàn toàn hài lòng khi đến với cửa hàng này, nhân viên tư vấn nhiệt tình, phân loại sản phẩm suất xắc, sẽ quay lại ửng hộ, mua rượu thì chỉ có nhắc đến Luxy Wine thôi.`,
-        avt: "https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.6435-9/71917241_2233920986901449_808711619935731712_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_ohc=2X7UYWM31WAAX84efzf&_nc_ht=scontent.fsgn4-1.fna&oh=00_AT9hk3WOc2SBSRfOJlV36w9XwH5uatYGcSDsvvtP4j6olQ&oe=62D13FE3",
+        avt: "https://variety.com/wp-content/uploads/2022/04/Elle-Fanning-Plainville.jpg?w=681&h=383&crop=1",
       },
 
       {
         name: "Dương Thanh Thành",
         content: `Tất cả mọi thứ đều tốt, duy chỉ có rượu là tốt một cách quá đáng, hương vị được giữ nguyên bản, phụ kiện chuẩn gu, giá lại hợp lý, hàng bao chất lượng`,
-        avt: "https://scontent.fsgn8-2.fna.fbcdn.net/v/t39.30808-6/286997316_1695477660829949_5985535757423811061_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fHmk158Kj1gAX8GDp15&_nc_ht=scontent.fsgn8-2.fna&oh=00_AT-bo3EKhL3CiyynddpXkEI0SXGIn65AlDTb-2RV3crbUg&oe=62ADEFED",
+        avt: "https://guardian.ng/wp-content/uploads/2021/12/Harmattan-children-1424x802.jpg",
       },
     ];
 
