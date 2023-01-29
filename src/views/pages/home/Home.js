@@ -158,12 +158,12 @@ const Home = () => {
         content: `Đây là một hạt giống tiềm năng cho khả năng phát triển
         ngành hàng thuốc ngoại ở Việt Nam, giá cả đi đôi với chất
         lượng, thái độ phục vụ chuyên nghiệp, phục vụ tận tình, 10
-        điểm dành cho Luxy Wine`,
+        điểm dành cho Medigood`,
         avt: "https://res.cloudinary.com/tanthanh0805/image/upload/v1640322386/moriiStore/N%C3%A0ng_th%C6%A1__13_jk1or9.jpg",
       },
       {
         name: "Trần Trúc Mã",
-        content: `Hết sức tuyệt vời, một trải nghiệm hoàn toàn hài lòng khi đến với cửa hàng này, nhân viên tư vấn nhiệt tình, phân loại sản phẩm suất xắc, sẽ quay lại ửng hộ, mua rượu thì chỉ có nhắc đến Luxy Wine thôi.`,
+        content: `Hết sức tuyệt vời, một trải nghiệm hoàn toàn hài lòng khi đến với cửa hàng này, nhân viên tư vấn nhiệt tình, phân loại sản phẩm suất xắc, sẽ quay lại ửng hộ, mua rượu thì chỉ có nhắc đến Medigood thôi.`,
         avt: "https://variety.com/wp-content/uploads/2022/04/Elle-Fanning-Plainville.jpg?w=681&h=383&crop=1",
       },
 

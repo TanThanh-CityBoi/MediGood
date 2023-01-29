@@ -23,7 +23,7 @@ function LoginWithUserNameAndPasswordModal(props) {
           borderRadius: "10px",
         }}
       >
-        <h1 className="modal-title">Đăng nhập vào Luxy Wine</h1>
+        <h1 className="modal-title">Đăng nhập vào Medigood</h1>
 
         <Stack
           sx={{

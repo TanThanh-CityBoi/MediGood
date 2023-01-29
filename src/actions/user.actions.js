@@ -36,7 +36,8 @@ function login(email, password, callback) {
         }
       },
       (error) => {
-        dispatch(appActions.showFailToast(error));
+
+        dispatch(appActions.showFailToast('Đăng nhập không thành công, vui lòng thử lại.'));
         dispatch(failure(error.toString()));
       }
     );
@@ -49,7 +50,7 @@ function login(email, password, callback) {
     return { type: userConstants.LOGIN_SUCCESS, logedUser };
   }
   function failure(error) {
-    return { type: userConstants.LOGIN_FAILURE, error };
+    return { type: userConstants.LOGIN_FAILURE, error};
   }
 }
 
@@ -306,7 +307,7 @@ function addToCart(value) {
         },
         (error) => {
           dispatch(failure(error.toString()));
-          dispatch(appActions.showFailToast(error.toString()));
+          dispatch(appActions.showFailToast('Đã có lỗi xảy ra, vui lòng kiểm tra lại'));
         }
       );
     }

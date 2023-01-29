@@ -92,7 +92,7 @@ function ReceiptBrefing({ setTotalPrice, setVoucher, productCount }) {
           <p className="receipt-note">
             <i>
               Hàng giảm giá không hỗ trợ đổi - trả.
-              <br></br> Mọi khiếu nại giao nhầm/ thiếu sản phẩm, Luxy Wine chỉ
+              <br></br> Mọi khiếu nại giao nhầm/ thiếu sản phẩm, Medigood chỉ
               hỗ trợ khi bạn cung cấp video từ khi mở hộp tới mở sản phẩm bên
               trong không bị cắt đoạn. Xin cảm ơn!
             </i>
