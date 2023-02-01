@@ -99,21 +99,6 @@ function ReceiptBrefing({ setTotalPrice, setVoucher, productCount }) {
           </p>
 
           <div className="button-group">
-            <div className="input-voucher">
-              <input
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                type={"text"}
-                placeholder="Mã giảm giá"
-              />
-              <button
-                onClick={handleCheckPromotion}
-                className="btn-buy"
-                type="button"
-              >
-                Áp dụng
-              </button>
-            </div>
             <button
               className="order-btn"
               type="submit"

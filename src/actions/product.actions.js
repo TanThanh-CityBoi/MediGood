@@ -4,7 +4,7 @@ import { productServices } from "../services";
 export const productActions = {
   getAll,
   getList,
-  getListSpecialProduct,
+  getListRecommendProduct,
   getListAccessary,
   create,
   update,
@@ -15,14 +15,18 @@ export const productActions = {
 
 function getAll(params) {
   return (dispatch) => {
+    console.log('get all product')
     dispatch(request());
 
     productServices.getAll(params).then(
       (data) => {
-        console.log(data);
+
+        console.log(`product ${data}`);
         dispatch(success(data["data"]));
       },
-      (error) => dispatch(failure(error.toString()))
+      (error) => {
+        console.log({error, product: 'product'})
+        dispatch(failure(error.toString()))}
     );
   };
 
@@ -61,11 +65,11 @@ function getList(params) {
   }
 }
 
-function getListSpecialProduct() {
+function getListRecommendProduct() {
   return (dispatch) => {
     dispatch(request());
 
-    productServices.getListSpecialProduct().then(
+    productServices.getListRecommendProduct().then(
       (data) => {
         console.log(data);
         dispatch(success(data["data"]));

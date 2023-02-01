@@ -94,6 +94,8 @@ function ReceiptDetail(props) {
   ];
   const receipt = useSelector((state) => state.receiptReducer.receipt) || {};
   const [receiptStatus, setReceiptStatus] = useState(receipt.status);
+  // alert(JSON.stringify(receipt.status, null, 2))
+  console.log({receiptStatus, receipt})
 
   const cartItems = receipt.cart?.map((item, index) => {
     const temp = {};
@@ -124,6 +126,7 @@ function ReceiptDetail(props) {
     dispatch(receiptActions.getOne(id));
     dispatch(productActions.getAll());
   }, []);
+
   const handleDeleteOnClick = () => {
     dispatch(
       appActions.openConfirmDialog(
@@ -211,7 +214,7 @@ function ReceiptDetail(props) {
             <div className="display-flex">
               <select
                 name="status"
-                value={receiptStatus}
+                value={receiptStatus ?? receipt.status}
                 onChange={(e) => setReceiptStatus(e.target.value)}
               >
                 {statusList.map((item, index) => {
@@ -222,13 +225,16 @@ function ReceiptDetail(props) {
                   );
                 })}
               </select>
-              <span
+              <div>
+
+              <p
                 onClick={handleChangeReceiptStatus}
-                style={{ marginLeft: 12 }}
+                style={{ marginLeft: 12, width: 110 }}
                 className="lw-btn"
-              >
+                >
                 Cập nhật
-              </span>
+              </p>
+                </div>
             </div>
           </div>
         </Grid>

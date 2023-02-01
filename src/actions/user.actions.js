@@ -263,7 +263,9 @@ function deleteMany(values) {
 
 function addToCart(value) {
   return (dispatch) => {
+    console.log('add to card')
     if (!cookiesUtil.getAccessToken()) {
+      console.log('cookie get accesstoken')
       if (cookiesUtil.getProductCart()) {
         var productExist = -1;
         const cart = cookiesUtil.getProductCart();
@@ -299,13 +301,15 @@ function addToCart(value) {
         dispatch(appActions.showSuccessToast("Thêm vào giỏ hàng thành công"));
       }
     } else {
-      dispatch(request());
+      console.log('đã đăng nhập nè')
       usersServices.addToCart(value).then(
         () => {
+          console.log('thêm giỏ hàng thành công')
           dispatch(success());
           dispatch(appActions.showSuccessToast("Thêm vào giỏ hàng thành công"));
         },
         (error) => {
+          console.log('thêm giỏ hàng thất bại', error)
           dispatch(failure(error.toString()));
           dispatch(appActions.showFailToast('Đã có lỗi xảy ra, vui lòng kiểm tra lại'));
         }

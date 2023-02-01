@@ -16,7 +16,6 @@ import { ProductComponent } from "../../component/product-component/ProductCompo
 import { PaginationCustom } from "../../component/PaginationCustom";
 
 const Search = () => {
-  const banners = useSelector((state) => state.bannerReducer.banners) || [];
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const elementPerPage = 8;
@@ -24,21 +23,9 @@ const Search = () => {
 
   var products = useSelector((state) => state.productReducer.products) || [];
 
-  const newsList = useSelector((state) => state.newsReducer.newsList) || [];
-  const vouchers = useSelector((state) => state.newsReducer.vouchers) || [];
   useEffect(() => {
-    if (banners.length === 0) {
-      dispatch(bannerActions.getAll());
-    }
     if (products.length === 0) {
       dispatch(productActions.getAll());
-    }
-    if (newsList.length === 0) {
-      dispatch(newsActions.getAll());
-    }
-
-    if (vouchers.length === 0) {
-      dispatch(voucherActions.getAll());
     }
   }, []);
   const dataBread = [
@@ -47,30 +34,24 @@ const Search = () => {
       link: "/gio-hang",
     },
   ];
-
+  
+  console.log({products})
   products = products?.filter((item) =>
-    item.name.includes(searchParams.get("key"))
+    item.name.toUpperCase().includes(searchParams.get("key").toUpperCase())
   );
+
 
   const productsInPage = products.slice(
     (currentPage - 1) * elementPerPage,
     currentPage * elementPerPage
   );
 
-  // const newsInPage = newsList?.slice(
-  //   (currentPage - 1) * elementPerPage,
-  //   currentPage * elementPerPage
-  // );
-
   const [category, setCategory] = useState(0);
 
   return (
     <Container className="search-wrapper">
-      {banners.length > 0 && banners[3].slides.length > 0 ? (
-        <SliderComponent slides={banners[3].slides} />
-      ) : (
-        <Banner url="https://cdn-images.zety.com/pages/pharmacist_cover_letter_example_4.jpg" />
-      )}
+      <Banner url="https://cdn-images.zety.com/pages/pharmacist_cover_letter_example_4.jpg" />
+
       <Breadcrumb
         style={{
           marginLeft: "-20px",
@@ -80,38 +61,6 @@ const Search = () => {
       <h1 className="search-title">
         Kết quả tìm kiếm cho {`"${searchParams.get("key")}"`}
       </h1>
-      <span
-        style={{
-          display: "inline-block",
-          marginRight: "12px",
-        }}
-        onClick={() => setCategory(0)}
-        className={category === 0 ? "lw-btn" : "lw-outline-btn"}
-      >
-        Sản phẩm
-      </span>
-
-      <span
-        style={{
-          display: "inline-block",
-          marginRight: "12px",
-        }}
-        onClick={() => setCategory(1)}
-        className={category === 1 ? "lw-btn" : "lw-outline-btn"}
-      >
-        Tin tức
-      </span>
-
-      <span
-        style={{
-          display: "inline-block",
-          marginRight: "12px",
-        }}
-        onClick={() => setCategory(2)}
-        className={category === 2 ? "lw-btn" : "lw-outline-btn"}
-      >
-        Voucher
-      </span>
 
       <div
         style={{
@@ -142,12 +91,12 @@ const Search = () => {
 
         <div className="result-filter">
           <p>
-            Tìm được <b>{100}</b> kết quả
+            Tìm được <b>{products.length}</b> kết quả
           </p>
         </div>
       </div>
 
-      {category === 0 && productsInPage.length > 0 && (
+      {productsInPage.length > 0 && (
         <Container className="product-list">
           <Row
             style={{

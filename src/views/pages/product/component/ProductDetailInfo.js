@@ -4,8 +4,6 @@ import { useSelector } from "react-redux";
 import './ProductDetailInfo.scss'
 
 function ProductDetailInfo(props) {
-    const foodlist = useSelector(state => state.foodReducer.foods);
-    console.log("🚀 ~ file: ProductDetailInfo.js ~ line 9 ~ ProductDetailInfo ~ props", props.product.aboutProduct)
     return (
         <Row className="product-detail-info-wrapper">
             <Col xs={12} lg={3} className='left-grid'>
