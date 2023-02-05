@@ -23,7 +23,6 @@ function Blogs() {
         <Banner url="https://cdn-images.zety.com/pages/pharmacist_cover_letter_example_4.jpg" />
       )}
       <BlogList />
-      <SuggestProduct />
     </Container>
   );
 }

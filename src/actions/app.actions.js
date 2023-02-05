@@ -33,6 +33,7 @@ function showSuccessToast(message) {
 
 function showFailToast(message) {
   return (dispatch) => {
+    console.log('show fail toast here')
     dispatch({
       type: toastContants.SHOW_TOAST,
       typeToast: "fail",

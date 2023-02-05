@@ -36,7 +36,6 @@ const Products = () => {
       </div>
 
       <div className="suggest-product">
-        <SuggestProduct />
       </div>
     </Container>
   );

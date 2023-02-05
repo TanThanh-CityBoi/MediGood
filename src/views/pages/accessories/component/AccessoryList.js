@@ -5,6 +5,8 @@ import { Container } from "react-bootstrap";
 import { ProductComponent } from "../../../component/product-component/ProductComponent";
 import { PaginationCustom } from "../../../component/PaginationCustom";
 import "./AccessoryList.scss";
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 function AccessoryList(props) {
   const dispatch = useDispatch();
@@ -56,7 +58,18 @@ function AccessoryList(props) {
   );
 
   return isLoading ? (
-    <h1 style={{ marginTop: "12rem" }}>Loading............</h1>
+    <div
+    style={{
+      display: "flex",
+      height: "100vh",
+      alignIten: "center",
+      justifyContent: "center",
+    }}
+  >
+    <h1 style={{ margin: "auto" }}>
+      <CircularProgress color="success" />
+    </h1>
+  </div>
   ) : (
     <Container className="product-list-wrapper">
       <Container className="product-list-header-wrapper">

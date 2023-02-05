@@ -92,28 +92,13 @@ function ReceiptBrefing({ setTotalPrice, setVoucher, productCount }) {
           <p className="receipt-note">
             <i>
               Hàng giảm giá không hỗ trợ đổi - trả.
-              <br></br> Mọi khiếu nại giao nhầm/ thiếu sản phẩm, Luxy Wine chỉ
+              <br></br> Mọi khiếu nại giao nhầm/ thiếu sản phẩm, Medigood chỉ
               hỗ trợ khi bạn cung cấp video từ khi mở hộp tới mở sản phẩm bên
               trong không bị cắt đoạn. Xin cảm ơn!
             </i>
           </p>
 
           <div className="button-group">
-            <div className="input-voucher">
-              <input
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                type={"text"}
-                placeholder="Mã giảm giá"
-              />
-              <button
-                onClick={handleCheckPromotion}
-                className="btn-buy"
-                type="button"
-              >
-                Áp dụng
-              </button>
-            </div>
             <button
               className="order-btn"
               type="submit"

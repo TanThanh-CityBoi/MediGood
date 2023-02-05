@@ -5,7 +5,7 @@ import ajaxHelper from "./api";
 export const productServices = {
   getAll,
   getList,
-  getListSpecialProduct,
+  getListRecommendProduct,
   getListAccessary,
   getOne,
   create,
@@ -25,9 +25,9 @@ function getList(params) {
     ajaxHelper.get(config.URL_PRODUCT + `/list`, params, options())
   );
 }
-function getListSpecialProduct(params = {}) {
+function getListRecommendProduct(params = {}) {
   return handleResponse(
-    ajaxHelper.get(config.URL_PRODUCT + `/listSpecialProduct`, params, options())
+    ajaxHelper.get(config.URL_PRODUCT + `/get-recommend-product`, params, options())
   );
 }
 

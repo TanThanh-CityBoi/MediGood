@@ -154,21 +154,21 @@ const Home = () => {
   function CustomerReview() {
     const review = [
       {
-        name: "Nguyễn Thị Thanh Mai",
+        name: "Trần Văn Minh",
         content: `Đây là một hạt giống tiềm năng cho khả năng phát triển
         ngành hàng thuốc ngoại ở Việt Nam, giá cả đi đôi với chất
         lượng, thái độ phục vụ chuyên nghiệp, phục vụ tận tình, 10
-        điểm dành cho Luxy Wine`,
+        điểm dành cho Medigood`,
         avt: "https://res.cloudinary.com/tanthanh0805/image/upload/v1640322386/moriiStore/N%C3%A0ng_th%C6%A1__13_jk1or9.jpg",
       },
       {
-        name: "Trần Trúc Mã",
-        content: `Hết sức tuyệt vời, một trải nghiệm hoàn toàn hài lòng khi đến với cửa hàng này, nhân viên tư vấn nhiệt tình, phân loại sản phẩm suất xắc, sẽ quay lại ửng hộ, mua rượu thì chỉ có nhắc đến Luxy Wine thôi.`,
+        name: "Nguyễn Hải Trúc",
+        content: `Hết sức tuyệt vời, một trải nghiệm hoàn toàn hài lòng khi đến với cửa hàng này, nhân viên tư vấn nhiệt tình, phân loại sản phẩm suất xắc, sẽ quay lại ửng hộ, mua rượu thì chỉ có nhắc đến Medigood thôi.`,
         avt: "https://variety.com/wp-content/uploads/2022/04/Elle-Fanning-Plainville.jpg?w=681&h=383&crop=1",
       },
 
       {
-        name: "Dương Thanh Thành",
+        name: "Dương Thanh Tân",
         content: `Tất cả mọi thứ đều tốt, duy chỉ có rượu là tốt một cách quá đáng, hương vị được giữ nguyên bản, phụ kiện chuẩn gu, giá lại hợp lý, hàng bao chất lượng`,
         avt: "https://guardian.ng/wp-content/uploads/2021/12/Harmattan-children-1424x802.jpg",
       },

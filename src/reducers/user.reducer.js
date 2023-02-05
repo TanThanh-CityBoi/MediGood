@@ -34,8 +34,9 @@ export function userReducer(state = initialState, action) {
       //   window.location.reload(true);
       return {}
     case userConstants.LOGIN_FAILURE:
+      console.log('login error here')
       return {
-        ...state,
+        ...initialState,
         loading: false,
         error: "Unregconize username or password"
       }

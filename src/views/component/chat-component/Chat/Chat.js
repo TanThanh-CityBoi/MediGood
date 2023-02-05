@@ -81,7 +81,7 @@ const Chat = () => {
 
   const getAllUserMessage = () => {
     axios
-      .get(`http://localhost:5000/api/user-chat/get-chat?id=${userInfo._id}`)
+      .get(`${host}api/user-chat/get-chat?id=${userInfo._id}`)
       .then((data) => {
         // console.log("data", data)
         setMessages(data?.data?.message?.chat);

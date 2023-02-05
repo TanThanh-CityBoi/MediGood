@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { productActions } from "../../../../actions/product.actions";
 import { PaginationCustom } from "../../../component/PaginationCustom";
 import { ProductComponent } from "../../../component/product-component/ProductComponent";
+import CircularProgress from '@mui/material/CircularProgress';
 
 function ProductList(props) {
   const navigate = useNavigate();
@@ -61,7 +62,18 @@ function ProductList(props) {
     dispatch(productActions.getList({ productType: "wine" }));
   };
   return isLoading ? (
-    <h1 style={{ marginTop: "12rem" }}>Loading............</h1>
+    <div
+    style={{
+      display: "flex",
+      height: "100vh",
+      alignIten: "center",
+      justifyContent: "center",
+    }}
+  >
+    <h1 style={{ margin: "auto" }}>
+      <CircularProgress color="success" />
+    </h1>
+  </div>
   ) : (
     <Container className="product-list-wrapper">
       <Container className="product-list-header-wrapper">

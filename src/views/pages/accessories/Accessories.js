@@ -32,7 +32,6 @@ const SpecialProducts = () => {
       <AccessoryList />
 
       <div className="suggest-product">
-        <SuggestProduct />
       </div>
     </Container>
   );

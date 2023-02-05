@@ -77,7 +77,6 @@ function Cast() {
                         </div>
                         <hr></hr>
 
-                        <p><i>Bạn có thể nhập mã ở trang thanh toán</i></p>
 
                         <div className="button-group">
                             <button className="btn-buy" onClick={()=> navigate('/thanh-toan')}>Tiến hành đặt hàng</button>
@@ -86,7 +85,6 @@ function Cast() {
                     </div>
                 </Col>
             </Row>
-            <SuggestProduct />
         </Container>
     )
 }
